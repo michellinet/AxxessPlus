@@ -14,6 +14,7 @@
 		DF71884F1EDFB70E0016B5EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF71884D1EDFB70E0016B5EB /* LaunchScreen.storyboard */; };
 		DF71885A1EDFB70E0016B5EB /* Axxess_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188591EDFB70E0016B5EB /* Axxess_Tests.swift */; };
 		DF7188651EDFB70E0016B5EB /* Axxess_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188641EDFB70E0016B5EB /* Axxess_UITests.swift */; };
+		DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DF7188601EDFB70E0016B5EB /* Axxess+UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Axxess+UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7188641EDFB70E0016B5EB /* Axxess_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axxess_UITests.swift; sourceTree = "<group>"; };
 		DF7188661EDFB70E0016B5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxxessMerchant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				DF7188441EDFB70E0016B5EB /* AppDelegate.swift */,
 				DF7188461EDFB70E0016B5EB /* ViewController.swift */,
 				DF7188481EDFB70E0016B5EB /* Main.storyboard */,
+				DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */,
 				DF71884B1EDFB70E0016B5EB /* Assets.xcassets */,
 				DF71884D1EDFB70E0016B5EB /* LaunchScreen.storyboard */,
 				DF7188501EDFB70E0016B5EB /* Info.plist */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF7188471EDFB70E0016B5EB /* ViewController.swift in Sources */,
+				DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */,
 				DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
