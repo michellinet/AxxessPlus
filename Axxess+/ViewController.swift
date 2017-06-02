@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate{
     
     var merchantList: [AxxessMerchant]!
     
@@ -41,6 +41,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var merchantAddress: UILabel!
 
+    @IBOutlet weak var merchantMapView: MKMapView!
+    
     @IBOutlet weak var merchantOneTimeDeal: UILabel!
 
     @IBOutlet weak var merchantContinualDeal: UILabel!
