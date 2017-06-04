@@ -146,6 +146,7 @@
                     <connections>
                         <outlet property="merchantAddress" destination="Pq4-hx-MNg" id="t3Z-4j-BBY"/>
                         <outlet property="merchantContinualDeal" destination="Nfv-HL-UK4" id="yde-Md-zh1"/>
+                        <outlet property="merchantMapView" destination="C16-3S-IYC" id="ET6-9K-n6e"/>
                         <outlet property="merchantName" destination="tW3-uI-l3P" id="VYp-mt-VtM"/>
                         <outlet property="merchantOneTimeDeal" destination="LhY-Pd-gDf" id="8Lu-YM-Cux"/>
                     </connections>
