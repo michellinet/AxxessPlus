@@ -48,6 +48,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
     var annotation: MKPointAnnotation?
     
     func setupMKView (address: String, MKView: MKMapView) {
+
+        if let existingAnnotation = self.annotation {
+            MKView.removeAnnotation(existingAnnotation)
+        }
+
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { (placemarkArray, error) in
             if (error != nil) {
@@ -59,9 +64,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
                 let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpanMake(1/69, 1/69))
                 MKView.setRegion(region, animated: true)
                 
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = location.coordinate
-                MKView.showAnnotations([annotation], animated: true)
+                let newAnnotation = MKPointAnnotation()
+                self.annotation = newAnnotation
+                newAnnotation.coordinate = location.coordinate
+                MKView.showAnnotations([newAnnotation], animated: true)
             }
         }
     }
