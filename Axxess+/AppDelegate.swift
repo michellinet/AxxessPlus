@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,7 +41,83 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    // MARK: - Core Data stack
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+        /*
+         The persistent container for the application. This implementation
+         creates and returns a container, having loaded the store for the
+         application to it. This property is optional since there are legitimate
+         error conditions that could cause the creation of the store to fail.
+         */
+        let container = NSPersistentContainer(name: "MyAxxess")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                
+                /*
+                 Typical reasons for an error here include:
+                 * The parent directory does not exist, cannot be created, or disallows writing.
+                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                 * The device is out of space.
+                 * The store could not be migrated to the current model version.
+                 Check the error message to determine what the actual problem was.
+                 */
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    // MARK: - Core Data Saving support
+    
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    func setupAxxessMerchants() {
+        let managedContext = persistentContainer.viewContext
+        managedContext.reset()
+        
+        //set up three merchants and write to core data.
+        let entity = NSEntityDescription.entity(forEntityName: "AxxessMerchant", in: managedContext)!
+        let merchantOne = NSManagedObject(entity: entity, insertInto: managedContext)
+        merchantOne.setValue("TAP Thai Cuisine", forKey: "name")
+        merchantOne.setValue("3130 State St., Santa Barbara, CA 93105", forKey: "address")
+        merchantOne.setValue("Buy One Entree, Get One Free.", forKey: "oneTimeDeal")
+        merchantOne.setValue("Save 10% Thereafter.", forKey: "continualDeal")
+        
+        let merchantTwo = NSManagedObject(entity: entity, insertInto: managedContext)
+        merchantTwo.setValue("Live Oak Cafe", forKey: "name")
+        merchantTwo.setValue("2220 Bath St., Santa Barbara, CA 93105", forKey: "address")
+        merchantTwo.setValue("Buy One Entree, Get One Free.", forKey: "oneTimeDeal")
+        merchantTwo.setValue("Save 10% Thereafter.", forKey: "continualDeal")
+        
+        let merchantThree = NSManagedObject(entity: entity, insertInto: managedContext)
+        merchantThree.setValue("Los Agaves - De La Vina", forKey: "name")
+        merchantThree.setValue("2911 De La Vina St., Santa Barbara, CA 93105", forKey: "address")
+        merchantThree.setValue("Buy One Entree, Get One Free.", forKey: "oneTimeDeal")
+        merchantThree.setValue("Free Fountain Drink with Entree Purchase Thereafter.", forKey: "continualDeal")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+    }
 
 }
 

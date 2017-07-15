@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */; };
+		DF5ECA501F1AD42000CAEEBF /* MyAxxess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF5ECA4E1F1AD42000CAEEBF /* MyAxxess.xcdatamodeld */; };
 		DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188441EDFB70E0016B5EB /* AppDelegate.swift */; };
 		DF7188471EDFB70E0016B5EB /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */; };
 		DF71884A1EDFB70E0016B5EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7188481EDFB70E0016B5EB /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
+		DF5ECA4F1F1AD42000CAEEBF /* MyAxxess.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyAxxess.xcdatamodel; sourceTree = "<group>"; };
 		DF7188411EDFB70E0016B5EB /* Axxess+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Axxess+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7188441EDFB70E0016B5EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */,
 				DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */,
 				DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */,
+				DF5ECA4E1F1AD42000CAEEBF /* MyAxxess.xcdatamodeld */,
 				DF7188481EDFB70E0016B5EB /* Main.storyboard */,
 				DF5ECA4D1F1AD0FC00CAEEBF /* Supporting Files */,
 			);
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF7188471EDFB70E0016B5EB /* RandomizerViewController.swift in Sources */,
+				DF5ECA501F1AD42000CAEEBF /* MyAxxess.xcdatamodeld in Sources */,
 				DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */,
 				DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */,
 				DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */,
@@ -553,6 +557,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF5ECA4E1F1AD42000CAEEBF /* MyAxxess.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF5ECA4F1F1AD42000CAEEBF /* MyAxxess.xcdatamodel */,
+			);
+			currentVersion = DF5ECA4F1F1AD42000CAEEBF /* MyAxxess.xcdatamodel */;
+			path = MyAxxess.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DF7188391EDFB70E0016B5EB /* Project object */;
 }
