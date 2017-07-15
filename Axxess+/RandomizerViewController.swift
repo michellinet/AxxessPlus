@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RandomizerViewController.swift
 //  Axxess+
 //
 //  Created by Michelline Tran on 5/31/17.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class RandomizerViewController: UIViewController, MKMapViewDelegate {
     
     var merchantList: [AxxessMerchant]!
     

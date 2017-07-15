@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */; };
 		DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188441EDFB70E0016B5EB /* AppDelegate.swift */; };
-		DF7188471EDFB70E0016B5EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188461EDFB70E0016B5EB /* ViewController.swift */; };
+		DF7188471EDFB70E0016B5EB /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */; };
 		DF71884A1EDFB70E0016B5EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7188481EDFB70E0016B5EB /* Main.storyboard */; };
 		DF71884C1EDFB70E0016B5EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF71884B1EDFB70E0016B5EB /* Assets.xcassets */; };
 		DF71884F1EDFB70E0016B5EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF71884D1EDFB70E0016B5EB /* LaunchScreen.storyboard */; };
@@ -35,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
 		DF7188411EDFB70E0016B5EB /* Axxess+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Axxess+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7188441EDFB70E0016B5EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF7188461EDFB70E0016B5EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
 		DF7188491EDFB70E0016B5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF71884B1EDFB70E0016B5EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF71884E1EDFB70E0016B5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +78,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF5ECA4D1F1AD0FC00CAEEBF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF71884B1EDFB70E0016B5EB /* Assets.xcassets */,
+				DF71884D1EDFB70E0016B5EB /* LaunchScreen.storyboard */,
+				DF7188501EDFB70E0016B5EB /* Info.plist */,
+				DF7188441EDFB70E0016B5EB /* AppDelegate.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		DF7188381EDFB70E0016B5EB = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +112,11 @@
 		DF7188431EDFB70E0016B5EB /* Axxess+ */ = {
 			isa = PBXGroup;
 			children = (
-				DF7188441EDFB70E0016B5EB /* AppDelegate.swift */,
-				DF7188461EDFB70E0016B5EB /* ViewController.swift */,
-				DF7188481EDFB70E0016B5EB /* Main.storyboard */,
 				DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */,
-				DF71884B1EDFB70E0016B5EB /* Assets.xcassets */,
-				DF71884D1EDFB70E0016B5EB /* LaunchScreen.storyboard */,
-				DF7188501EDFB70E0016B5EB /* Info.plist */,
+				DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */,
+				DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */,
+				DF7188481EDFB70E0016B5EB /* Main.storyboard */,
+				DF5ECA4D1F1AD0FC00CAEEBF /* Supporting Files */,
 			);
 			path = "Axxess+";
 			sourceTree = "<group>";
@@ -265,7 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF7188471EDFB70E0016B5EB /* ViewController.swift in Sources */,
+				DF7188471EDFB70E0016B5EB /* RandomizerViewController.swift in Sources */,
+				DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */,
 				DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */,
 				DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */,
 			);
@@ -520,6 +532,7 @@
 				DF71886B1EDFB70E0016B5EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF71886C1EDFB70E0016B5EB /* Build configuration list for PBXNativeTarget "Axxess+Tests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +541,7 @@
 				DF71886E1EDFB70E0016B5EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF71886F1EDFB70E0016B5EB /* Build configuration list for PBXNativeTarget "Axxess+UITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +550,7 @@
 				DF7188711EDFB70E0016B5EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
