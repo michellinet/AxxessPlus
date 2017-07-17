@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setupAxxessMerchants()
         return true
     }
 
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        self.saveContext()
     }
     
     // MARK: - Core Data stack
@@ -89,34 +89,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupAxxessMerchants() {
         let managedContext = persistentContainer.viewContext
-        managedContext.reset()
         
-        //set up three merchants and write to core data.
-        let entity = NSEntityDescription.entity(forEntityName: "AxxessMerchant", in: managedContext)!
-        let merchantOne = NSManagedObject(entity: entity, insertInto: managedContext)
-        merchantOne.setValue("TAP Thai Cuisine", forKey: "name")
-        merchantOne.setValue("3130 State St., Santa Barbara, CA 93105", forKey: "address")
-        merchantOne.setValue("Buy One Entree, Get One Free.", forKey: "oneTimeDeal")
-        merchantOne.setValue("Save 10% Thereafter.", forKey: "continualDeal")
+        let merchantsForCurrentVersion = getMerchantsForCurrentVersion(context: managedContext)
         
-        let merchantTwo = NSManagedObject(entity: entity, insertInto: managedContext)
-        merchantTwo.setValue("Live Oak Cafe", forKey: "name")
-        merchantTwo.setValue("2220 Bath St., Santa Barbara, CA 93105", forKey: "address")
-        merchantTwo.setValue("Buy One Entree, Get One Free.", forKey: "oneTimeDeal")
-        merchantTwo.setValue("Save 10% Thereafter.", forKey: "continualDeal")
-        
-        let merchantThree = NSManagedObject(entity: entity, insertInto: managedContext)
-        merchantThree.setValue("Los Agaves - De La Vina", forKey: "name")
-        merchantThree.setValue("2911 De La Vina St., Santa Barbara, CA 93105", forKey: "address")
-        merchantThree.setValue("Buy One Entree, Get One Free.", forKey: "oneTimeDeal")
-        merchantThree.setValue("Free Fountain Drink with Entree Purchase Thereafter.", forKey: "continualDeal")
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+        for merchant in merchantsForCurrentVersion {
+            Merchant.findOrCreateMerchant(matching: merchant, in: managedContext)
         }
         
+    }
+    
+    func getMerchantsForCurrentVersion(context: NSManagedObjectContext) -> [AxxessMerchant] {
+        let merchantOne = AxxessMerchant(name:  "TAP Thai Cuisine", address: "3130 State St., Santa Barbara, CA 93105", oneTimeDeal: "Buy One Entree, Get One Free.", continualDeal: "Save 10% Thereafter.", id: "1")
+        let merchantTwo = AxxessMerchant(name:  "Live Oak Cafe", address: "2220 Bath St., Santa Barbara, CA 93105", oneTimeDeal: "Buy One Entree, Get One Free.", continualDeal: "Save 10% Thereafter.", id: "2")
+        let merchantThree = AxxessMerchant(name: "Los Agaves - De La Vina", address: "2911 De La Vina St., Santa Barbara, CA 93105", oneTimeDeal: "Buy One Entree, Get One Free.", continualDeal: "Free Fountain Drink with Entree Purchase Thereafter.", id: "3")
+
+        return [merchantOne, merchantTwo, merchantThree]
     }
 
 }

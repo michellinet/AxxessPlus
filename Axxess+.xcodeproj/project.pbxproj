@@ -17,6 +17,8 @@
 		DF71885A1EDFB70E0016B5EB /* Axxess_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188591EDFB70E0016B5EB /* Axxess_Tests.swift */; };
 		DF7188651EDFB70E0016B5EB /* Axxess_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188641EDFB70E0016B5EB /* Axxess_UITests.swift */; };
 		DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */; };
+		DFF5E0391F1C71F80052A13C /* Merchant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5E0371F1C71F80052A13C /* Merchant+CoreDataClass.swift */; };
+		DFF5E03A1F1C71F80052A13C /* Merchant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5E0381F1C71F80052A13C /* Merchant+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		DF7188641EDFB70E0016B5EB /* Axxess_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axxess_UITests.swift; sourceTree = "<group>"; };
 		DF7188661EDFB70E0016B5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxxessMerchant.swift; sourceTree = "<group>"; };
+		DFF5E0371F1C71F80052A13C /* Merchant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Merchant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DFF5E0381F1C71F80052A13C /* Merchant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Merchant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */,
 				DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */,
 				DF5ECA4E1F1AD42000CAEEBF /* MyAxxess.xcdatamodeld */,
+				DFF5E0371F1C71F80052A13C /* Merchant+CoreDataClass.swift */,
+				DFF5E0381F1C71F80052A13C /* Merchant+CoreDataProperties.swift */,
 				DF7188481EDFB70E0016B5EB /* Main.storyboard */,
 				DF5ECA4D1F1AD0FC00CAEEBF /* Supporting Files */,
 			);
@@ -282,8 +288,10 @@
 				DF7188471EDFB70E0016B5EB /* RandomizerViewController.swift in Sources */,
 				DF5ECA501F1AD42000CAEEBF /* MyAxxess.xcdatamodeld in Sources */,
 				DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */,
+				DFF5E0391F1C71F80052A13C /* Merchant+CoreDataClass.swift in Sources */,
 				DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */,
 				DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */,
+				DFF5E03A1F1C71F80052A13C /* Merchant+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

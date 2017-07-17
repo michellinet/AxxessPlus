@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Merchant" representedClassName="Merchant" syncable="YES" codeGenerationType="class">
+    <entity name="Merchant" representedClassName=".Merchant" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="continualDeal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasUsedOneTimeDeal" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="oneTimeDeal" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Merchant" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Merchant" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

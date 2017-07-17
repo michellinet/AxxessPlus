@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Directory-->
+        <!--Directory Table View Controller-->
         <scene sceneID="XYK-tL-APc">
             <objects>
                 <tableViewController id="p3j-jK-SOz" customClass="DirectoryTableViewController" customModule="Axxess_" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oXa-I5-LOb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Merchant" id="oXa-I5-LOb">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oXa-I5-LOb" id="Jhz-Mc-rJv">
@@ -33,14 +33,14 @@
                             <outlet property="delegate" destination="p3j-jK-SOz" id="oVI-XG-zi0"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Directory" id="rkG-BR-hOl"/>
+                    <navigationItem key="navigationItem" id="aQz-4w-Y9x"/>
                     <connections>
                         <segue destination="jr8-UA-KWM" kind="showDetail" id="Wcg-1n-RQq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRa-nE-QVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-946" y="-424"/>
+            <point key="canvasLocation" x="-7.2000000000000002" y="-424.13793103448279"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="89w-8E-zD9">
@@ -52,15 +52,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="bzv-4s-l0h"/>
-                        <segue destination="p3j-jK-SOz" kind="relationship" relationship="viewControllers" id="nii-o1-jBA"/>
+                        <segue destination="9Fr-9A-r6D" kind="relationship" relationship="viewControllers" id="bzv-4s-l0h"/>
+                        <segue destination="HMu-Gl-Ldh" kind="relationship" relationship="viewControllers" id="nii-o1-jBA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHS-kA-bvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1895" y="-136"/>
         </scene>
-        <!--Randomizer-->
+        <!--Randomizer View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RandomizerViewController" customModule="Axxess_" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1p-TG-7DT">
-                                <rect key="frame" x="96" y="310" width="183" height="33"/>
+                                <rect key="frame" x="96" y="354" width="183" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Tell me where to eat!">
                                     <color key="titleColor" red="0.30196078430000001" green="0.08235294118" blue="0.72941176470000002" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7HS-Ug-xNu">
-                                <rect key="frame" x="26" y="30" width="323" height="270"/>
+                                <rect key="frame" x="26" y="74" width="323" height="270"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="2er-Fw-Hzq">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="20.5"/>
@@ -193,7 +193,7 @@
                             <constraint firstItem="7HS-Ug-xNu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="wVJ-E5-sRf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Randomizer" id="upI-Xf-JPe"/>
+                    <navigationItem key="navigationItem" id="GJh-Wc-Pc3"/>
                     <connections>
                         <outlet property="merchantAddress" destination="Pq4-hx-MNg" id="t3Z-4j-BBY"/>
                         <outlet property="merchantContinualDeal" destination="Nfv-HL-UK4" id="yde-Md-zh1"/>
@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-945" y="276"/>
+            <point key="canvasLocation" x="-7.2000000000000002" y="275.71214392803603"/>
         </scene>
         <!--MerchantDetail-->
         <scene sceneID="rQR-pk-sZo">
@@ -339,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7U-lA-AFm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808.79999999999995" y="-424.13793103448279"/>
+            <point key="canvasLocation" x="1748" y="-424.13793103448279"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fVV-dP-7en">
@@ -357,7 +357,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqg-2e-QZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-130.40000000000001" y="-424.13793103448279"/>
+            <point key="canvasLocation" x="808.79999999999995" y="-424.13793103448279"/>
+        </scene>
+        <!--Directory-->
+        <scene sceneID="47k-mh-NiB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HMu-Gl-Ldh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Directory" id="rkG-BR-hOl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pXm-aC-giE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p3j-jK-SOz" kind="relationship" relationship="rootViewController" id="rrC-dg-kCO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35V-X0-Yvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946.39999999999998" y="-424.13793103448279"/>
+        </scene>
+        <!--Randomizer-->
+        <scene sceneID="BLb-V3-eNm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Fr-9A-r6D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Randomizer" id="upI-Xf-JPe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiL-fm-Lyx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Wc1-jV-cS9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FD7-vn-cXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946.39999999999998" y="275.71214392803603"/>
         </scene>
     </scenes>
 </document>
