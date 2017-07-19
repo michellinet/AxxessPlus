@@ -7,36 +7,42 @@
 //
 
 import UIKit
+import CoreData
 import MapKit
 
 class RandomizerViewController: UIViewController, MKMapViewDelegate {
-    
-    var merchantList: [AxxessMerchant]!
-    
-    func setupMerchantList() {
-        let merchantOne = AxxessMerchant(name: "TAP Thai Cuisine", address: "3130 State St., Santa Barbara, CA 93105", oneTimeDeal: "Buy One Entree, Get One Free.", continualDeal: "Save 10% Thereafter.", id: "1")
-        let merchantTwo = AxxessMerchant(name: "Live Oak Cafe", address: "2220 Bath St., Santa Barbara, CA 93105", oneTimeDeal: "Buy One Entree, Get One Free.", continualDeal: "Save 10% Thereafter.", id: "2")
-        let merchantThree = AxxessMerchant(name: "Los Agaves - De La Vina", address: "2911 De La Vina St., Santa Barbara, CA 93105", oneTimeDeal: "Buy One Entree, Get One Free.", continualDeal: "Free Fountain Drink with Entree Purchase Thereafter.", id: "3")
-        merchantList = []
-        merchantList.append(contentsOf: [merchantOne,merchantTwo, merchantThree])
-        
-    }
-    
+
+    private var merchants: [NSManagedObject] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMerchantList()
         merchantMapView.delegate = self
+
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Merchant")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
+
+        do {
+            merchants = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Couldn't fetch. \(error), \(error.userInfo)")
+        }
     }
+
     @IBAction func tellMeWhatToEatPressed(_ sender: Any) {
         let randomIndex = Int(arc4random() % 3)
-        let randomMerchant = merchantList[randomIndex]
-        
-        merchantName.text = randomMerchant.name
-        merchantAddress.text = randomMerchant.address
-        merchantOneTimeDeal.text = randomMerchant.oneTimeDeal
-        merchantContinualDeal.text = randomMerchant.continualDeal
-        
-        setupMKView(address: randomMerchant.address, MKView: merchantMapView)
+        let randomMerchant = merchants[randomIndex]
+
+
+        merchantName.text = randomMerchant.value(forKey: "name") as? String
+        merchantAddress.text = randomMerchant.value(forKey: "address") as? String
+        merchantOneTimeDeal.text = randomMerchant.value(forKey: "oneTimeDeal") as? String
+        merchantContinualDeal.text = randomMerchant.value(forKey: "continualDeal") as? String
+
+        if let address = merchantAddress.text {
+            setupMKView(address: address, MKView: merchantMapView)
+        }
     }
 
     @IBOutlet weak var merchantName: UILabel!
@@ -60,7 +66,6 @@ class RandomizerViewController: UIViewController, MKMapViewDelegate {
             }
             
             if let placemark = placemarkArray?.first, let location = placemark.location {
-                //MKView.setCenter(location.coordinate, animated: true)
                 let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpanMake(1/69, 1/69))
                 MKView.setRegion(region, animated: true)
                 
