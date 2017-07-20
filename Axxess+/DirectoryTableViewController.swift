@@ -16,7 +16,13 @@ class DirectoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        let nib = UINib(nibName: "DirectoryTableViewCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "Merchant")
+
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
+
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Merchant")
@@ -35,13 +41,13 @@ class DirectoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let merchant = merchants[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Merchant", for: indexPath)
-        cell.textLabel?.text = merchant.value(forKeyPath: "name") as? String
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Merchant", for: indexPath) as! DirectoryTableViewCell
+        cell.name.text = merchant.value(forKeyPath: "name") as? String
+        cell.address.text = merchant.value(forKeyPath: "address") as? String
+        cell.useOneTimeDeal.setImage(#imageLiteral(resourceName: "discount-purple"), for: .normal)
+
+        cell.viewDetails.setImage(#imageLiteral(resourceName: "disclosure-indicator"), for: .normal)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Some Header"
-    }
-
 }

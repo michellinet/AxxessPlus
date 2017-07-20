@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Directory Table View Controller-->
+        <!--Merchants-->
         <scene sceneID="XYK-tL-APc">
             <objects>
                 <tableViewController id="p3j-jK-SOz" customClass="DirectoryTableViewController" customModule="Axxess_" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Merchant" id="oXa-I5-LOb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Merchant" id="oXa-I5-LOb">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oXa-I5-LOb" id="Jhz-Mc-rJv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -33,7 +33,7 @@
                             <outlet property="delegate" destination="p3j-jK-SOz" id="oVI-XG-zi0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aQz-4w-Y9x"/>
+                    <navigationItem key="navigationItem" title="Merchants" id="aQz-4w-Y9x"/>
                     <connections>
                         <segue destination="jr8-UA-KWM" kind="showDetail" id="Wcg-1n-RQq"/>
                     </connections>

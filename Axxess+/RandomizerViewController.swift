@@ -33,8 +33,7 @@ class RandomizerViewController: UIViewController, MKMapViewDelegate {
     @IBAction func tellMeWhatToEatPressed(_ sender: Any) {
         let randomIndex = Int(arc4random() % 3)
         let randomMerchant = merchants[randomIndex]
-
-
+        
         merchantName.text = randomMerchant.value(forKey: "name") as? String
         merchantAddress.text = randomMerchant.value(forKey: "address") as? String
         merchantOneTimeDeal.text = randomMerchant.value(forKey: "oneTimeDeal") as? String

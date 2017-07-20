@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01E4AE491F200EA50081E23E /* DirectoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */; };
+		01E4AE4B1F200F1E0081E23E /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */; };
 		DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */; };
 		DF5ECA501F1AD42000CAEEBF /* MyAxxess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF5ECA4E1F1AD42000CAEEBF /* MyAxxess.xcdatamodeld */; };
 		DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188441EDFB70E0016B5EB /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryTableViewCell.xib; sourceTree = "<group>"; };
+		01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewCell.swift; sourceTree = "<group>"; };
 		DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
 		DF5ECA4F1F1AD42000CAEEBF /* MyAxxess.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyAxxess.xcdatamodel; sourceTree = "<group>"; };
 		DF7188411EDFB70E0016B5EB /* Axxess+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Axxess+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +128,8 @@
 				DF5ECA4E1F1AD42000CAEEBF /* MyAxxess.xcdatamodeld */,
 				DFF5E0371F1C71F80052A13C /* Merchant+CoreDataClass.swift */,
 				DFF5E0381F1C71F80052A13C /* Merchant+CoreDataProperties.swift */,
+				01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */,
+				01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */,
 				DF7188481EDFB70E0016B5EB /* Main.storyboard */,
 				DF5ECA4D1F1AD0FC00CAEEBF /* Supporting Files */,
 			);
@@ -261,6 +267,7 @@
 				DF71884F1EDFB70E0016B5EB /* LaunchScreen.storyboard in Resources */,
 				DF71884C1EDFB70E0016B5EB /* Assets.xcassets in Resources */,
 				DF71884A1EDFB70E0016B5EB /* Main.storyboard in Resources */,
+				01E4AE491F200EA50081E23E /* DirectoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +299,7 @@
 				DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */,
 				DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */,
 				DFF5E03A1F1C71F80052A13C /* Merchant+CoreDataProperties.swift in Sources */,
+				01E4AE4B1F200F1E0081E23E /* DirectoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
