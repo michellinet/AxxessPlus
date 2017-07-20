@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class DirectoryTableViewController: UITableViewController {
-    private var merchants: [NSManagedObject] = []
+    private var merchants: [Merchant] = []
     
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
@@ -25,7 +25,7 @@ class DirectoryTableViewController: UITableViewController {
 
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Merchant")
+        let fetchRequest = NSFetchRequest<Merchant>(entityName: "Merchant")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 
         do {
@@ -49,5 +49,18 @@ class DirectoryTableViewController: UITableViewController {
         cell.viewDetails.setImage(#imageLiteral(resourceName: "disclosure-indicator"), for: .normal)
         return cell
     }
-    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailSegue", sender: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue",
+            let nextScene = segue.destination as? MerchantDetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow {
+            let selectedMerchant = merchants[indexPath.row]
+            nextScene.currentMerchant = selectedMerchant
+        }
+    }
+
 }

@@ -50,9 +50,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWx-N1-IYS">
                                         <rect key="frame" x="36" y="0.0" width="30" height="29.5"/>
-                                        <connections>
-                                            <action selector="viewDetails:" destination="O83-IS-6Wi" eventType="touchUpInside" id="gfX-pK-EgK"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

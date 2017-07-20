@@ -19,24 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Merchant" id="oXa-I5-LOb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Merchant" id="oXa-I5-LOb" customClass="DirectoryTableViewCell" customModule="Axxess_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oXa-I5-LOb" id="Jhz-Mc-rJv">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="p1L-gy-vte" kind="show" identifier="detailSegue" id="VXg-ub-hxc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="p3j-jK-SOz" id="NzF-8z-Qdp"/>
                             <outlet property="delegate" destination="p3j-jK-SOz" id="oVI-XG-zi0"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Merchants" id="aQz-4w-Y9x"/>
-                    <connections>
-                        <segue destination="jr8-UA-KWM" kind="showDetail" id="Wcg-1n-RQq"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRa-nE-QVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -209,7 +210,7 @@
         <!--MerchantDetail-->
         <scene sceneID="rQR-pk-sZo">
             <objects>
-                <viewController id="p1L-gy-vte" userLabel="MerchantDetail" sceneMemberID="viewController">
+                <viewController id="p1L-gy-vte" userLabel="MerchantDetail" customClass="MerchantDetailViewController" customModule="Axxess_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HGx-O5-D4c"/>
                         <viewControllerLayoutGuide type="bottom" id="G7C-W6-aVp"/>
@@ -327,37 +328,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Merchant Details" id="VRB-uk-eBL">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="gn6-W6-WJd"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="gn6-W6-WJd">
+                            <color key="tintColor" red="0.30196078430000001" green="0.08235294118" blue="0.72941176470000002" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="dismissMerchantDetails:" destination="p1L-gy-vte" id="hVY-R2-5Pw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="merchantAddress" destination="xJm-B9-mYt" id="yFg-Y0-jV8"/>
+                        <outlet property="merchantAddress" destination="xJm-B9-mYt" id="6Qg-Rm-7Si"/>
                         <outlet property="merchantContinualDeal" destination="nQn-lR-QXE" id="Wa1-g9-Led"/>
                         <outlet property="merchantMapView" destination="tWl-UQ-Cf0" id="hZC-6B-Z7c"/>
-                        <outlet property="merchantName" destination="7dK-T8-Qow" id="tyy-YN-bT0"/>
+                        <outlet property="merchantName" destination="7dK-T8-Qow" id="gz6-Ji-ZLE"/>
                         <outlet property="merchantOneTimeDeal" destination="oFC-vP-DH3" id="IeJ-qV-Nip"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7U-lA-AFm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="-424.13793103448279"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fVV-dP-7en">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jr8-UA-KWM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sj9-3b-dDn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="p1L-gy-vte" kind="relationship" relationship="rootViewController" id="6Kb-ew-taA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kqg-2e-QZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="808.79999999999995" y="-424.13793103448279"/>
+            <point key="canvasLocation" x="1010" y="-424"/>
         </scene>
         <!--Directory-->
         <scene sceneID="47k-mh-NiB">
