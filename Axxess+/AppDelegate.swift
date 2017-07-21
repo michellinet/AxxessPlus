@@ -99,9 +99,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func getMerchantsForCurrentVersion(context: NSManagedObjectContext) -> [AxxessMerchant] {
-        let merchantOne = AxxessMerchant(name:  "TAP Thai Cuisine", address: "3130 State St., Santa Barbara, CA 93105", oneTimeDeal: "Buy One Entree, Get One Free.", continualDeal: "Save 10% Thereafter.", id: "1")
-        let merchantTwo = AxxessMerchant(name:  "Live Oak Cafe", address: "2220 Bath St., Santa Barbara, CA 93105", oneTimeDeal: "Buy One Entree, Get One Free.", continualDeal: "Save 10% Thereafter.", id: "2")
-        let merchantThree = AxxessMerchant(name: "Los Agaves - De La Vina", address: "2911 De La Vina St., Santa Barbara, CA 93105", oneTimeDeal: "Buy One Entree, Get One Free.", continualDeal: "Free Fountain Drink with Entree Purchase Thereafter.", id: "3")
+        let merchantOne = AxxessMerchant(name: "TAP Thai Cuisine",
+                                         address: "3130 State St., Santa Barbara, CA 93105",
+                                         oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Dine-in only. One per table.)", id: "62")],
+                                         continualDeal: "Save 10% Thereafter.",
+                                         id: "1")
+
+        let merchantTwo = AxxessMerchant(name: "Live Oak Cafe",
+                                         address: "2220 Bath St., Santa Barbara, CA 93105",
+                                         oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free.", id: "239")],
+                                         continualDeal: "Save 10% Thereafter.",
+                                         id: "2")
+
+        let merchantThree = AxxessMerchant(name: "Los Agaves - De La Vina",
+                                           address: "2911 De La Vina St., Santa Barbara, CA 93105",
+                                           oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One 50% Off. (Excludes seafood & specials.)", id: "262")],
+                                           continualDeal: "Free Fountain Drink with Entree Purchase Thereafter.",
+                                           id: "3")
 
         return [merchantOne, merchantTwo, merchantThree]
     }

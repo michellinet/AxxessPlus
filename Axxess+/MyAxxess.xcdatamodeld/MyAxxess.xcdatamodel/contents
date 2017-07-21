@@ -3,12 +3,18 @@
     <entity name="Merchant" representedClassName=".Merchant" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="continualDeal" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="hasUsedOneTimeDeal" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="oneTimeDeal" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="oneTimeDeals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OneTimeDeal" inverseName="merchant" inverseEntity="OneTimeDeal" syncable="YES"/>
+    </entity>
+    <entity name="OneTimeDeal" representedClassName=".OneTimeDeal" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oneTimeDealDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="used" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="merchant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Merchant" inverseName="oneTimeDeals" inverseEntity="Merchant" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Merchant" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Merchant" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="OneTimeDeal" positionX="-63" positionY="27" width="128" height="105"/>
     </elements>
 </model>

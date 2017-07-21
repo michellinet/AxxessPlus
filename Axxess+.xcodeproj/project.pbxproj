@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A30EE11F227D08006A7335 /* MerchantDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A30EE01F227D08006A7335 /* MerchantDetailTableViewController.swift */; };
 		01E4AE491F200EA50081E23E /* DirectoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */; };
 		01E4AE4B1F200F1E0081E23E /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */; };
 		01E4AE4F1F20485E0081E23E /* MerchantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */; };
+		01E4AEA31F215A4B0081E23E /* OneTimeDeal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AE9F1F215A4B0081E23E /* OneTimeDeal+CoreDataClass.swift */; };
+		01E4AEA41F215A4B0081E23E /* OneTimeDeal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AEA01F215A4B0081E23E /* OneTimeDeal+CoreDataProperties.swift */; };
+		01E4AEA51F215A4B0081E23E /* Merchant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AEA11F215A4B0081E23E /* Merchant+CoreDataClass.swift */; };
+		01E4AEA61F215A4B0081E23E /* Merchant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AEA21F215A4B0081E23E /* Merchant+CoreDataProperties.swift */; };
 		DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */; };
 		DF5ECA501F1AD42000CAEEBF /* MyAxxess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF5ECA4E1F1AD42000CAEEBF /* MyAxxess.xcdatamodeld */; };
 		DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188441EDFB70E0016B5EB /* AppDelegate.swift */; };
@@ -20,8 +25,6 @@
 		DF71885A1EDFB70E0016B5EB /* Axxess_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188591EDFB70E0016B5EB /* Axxess_Tests.swift */; };
 		DF7188651EDFB70E0016B5EB /* Axxess_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188641EDFB70E0016B5EB /* Axxess_UITests.swift */; };
 		DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */; };
-		DFF5E0391F1C71F80052A13C /* Merchant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5E0371F1C71F80052A13C /* Merchant+CoreDataClass.swift */; };
-		DFF5E03A1F1C71F80052A13C /* Merchant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5E0381F1C71F80052A13C /* Merchant+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01A30EE01F227D08006A7335 /* MerchantDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantDetailTableViewController.swift; sourceTree = "<group>"; };
 		01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryTableViewCell.xib; sourceTree = "<group>"; };
 		01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewCell.swift; sourceTree = "<group>"; };
 		01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantDetailViewController.swift; sourceTree = "<group>"; };
+		01E4AE9F1F215A4B0081E23E /* OneTimeDeal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OneTimeDeal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		01E4AEA01F215A4B0081E23E /* OneTimeDeal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OneTimeDeal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		01E4AEA11F215A4B0081E23E /* Merchant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Merchant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		01E4AEA21F215A4B0081E23E /* Merchant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Merchant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
 		DF5ECA4F1F1AD42000CAEEBF /* MyAxxess.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyAxxess.xcdatamodel; sourceTree = "<group>"; };
 		DF7188411EDFB70E0016B5EB /* Axxess+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Axxess+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,8 +69,6 @@
 		DF7188641EDFB70E0016B5EB /* Axxess_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axxess_UITests.swift; sourceTree = "<group>"; };
 		DF7188661EDFB70E0016B5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxxessMerchant.swift; sourceTree = "<group>"; };
-		DFF5E0371F1C71F80052A13C /* Merchant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Merchant+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DFF5E0381F1C71F80052A13C /* Merchant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Merchant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,10 @@
 			children = (
 				DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */,
 				DF5ECA4E1F1AD42000CAEEBF /* MyAxxess.xcdatamodeld */,
-				DFF5E0371F1C71F80052A13C /* Merchant+CoreDataClass.swift */,
-				DFF5E0381F1C71F80052A13C /* Merchant+CoreDataProperties.swift */,
+				01E4AE9F1F215A4B0081E23E /* OneTimeDeal+CoreDataClass.swift */,
+				01E4AEA01F215A4B0081E23E /* OneTimeDeal+CoreDataProperties.swift */,
+				01E4AEA11F215A4B0081E23E /* Merchant+CoreDataClass.swift */,
+				01E4AEA21F215A4B0081E23E /* Merchant+CoreDataProperties.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 			children = (
 				DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */,
 				01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */,
+				01A30EE01F227D08006A7335 /* MerchantDetailTableViewController.swift */,
 				01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */,
 				DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */,
 				01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */,
@@ -304,13 +313,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF7188471EDFB70E0016B5EB /* RandomizerViewController.swift in Sources */,
+				01E4AEA51F215A4B0081E23E /* Merchant+CoreDataClass.swift in Sources */,
+				01E4AEA61F215A4B0081E23E /* Merchant+CoreDataProperties.swift in Sources */,
 				DF5ECA501F1AD42000CAEEBF /* MyAxxess.xcdatamodeld in Sources */,
+				01E4AEA41F215A4B0081E23E /* OneTimeDeal+CoreDataProperties.swift in Sources */,
 				DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */,
+				01A30EE11F227D08006A7335 /* MerchantDetailTableViewController.swift in Sources */,
 				01E4AE4F1F20485E0081E23E /* MerchantDetailViewController.swift in Sources */,
-				DFF5E0391F1C71F80052A13C /* Merchant+CoreDataClass.swift in Sources */,
 				DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */,
+				01E4AEA31F215A4B0081E23E /* OneTimeDeal+CoreDataClass.swift in Sources */,
 				DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */,
-				DFF5E03A1F1C71F80052A13C /* Merchant+CoreDataProperties.swift in Sources */,
 				01E4AE4B1F200F1E0081E23E /* DirectoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

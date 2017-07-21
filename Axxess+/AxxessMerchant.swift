@@ -8,18 +8,15 @@
 
 import Foundation
 
-class AxxessMerchant {
+struct AxxessMerchant {
     let name: String
     let address: String
-    let oneTimeDeal: String
+    let oneTimeDeals: [AxxessOneTimeDeal]
     let continualDeal: String
     let id: String
+}
 
-    init(name: String, address: String, oneTimeDeal: String, continualDeal: String, id: String) {
-        self.name = name
-        self.address = address
-        self.oneTimeDeal = oneTimeDeal
-        self.continualDeal = continualDeal
-        self.id = id
-    }
+struct AxxessOneTimeDeal {
+    let oneTimeDealDescription: String
+    let id: String
 }

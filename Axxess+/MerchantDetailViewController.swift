@@ -12,12 +12,11 @@ import CoreData
 
 class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     private var merchants: [NSManagedObject] = []
+    private var oneTimeDeals: [NSManagedObject] = []
 
     @IBOutlet weak var merchantName: UILabel!
     @IBOutlet weak var merchantAddress: UILabel!
-    @IBOutlet weak var merchantOneTimeDeal: UILabel!
     @IBOutlet weak var merchantContinualDeal: UILabel!
-
     @IBAction func dismissMerchantDetails(_ sender: Any) {
 
         navigationController?.popViewController(animated: true)
@@ -31,13 +30,25 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
 
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
+
+        //fetch merchant
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Merchant")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 
         do {
             merchants = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
-            print("Couldn't fetch. \(error), \(error.userInfo)")
+            print("Couldn't fetch merchants. \(error), \(error.userInfo)")
+        }
+
+        //fetch deals for the merchant
+        let secondFetchRequest = NSFetchRequest<NSManagedObject>(entityName: "OneTimeDeal")
+        secondFetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
+        secondFetchRequest.predicate = NSPredicate(format: "%K == %@", "merchant.id", "currentMerchant.id")
+        do {
+            oneTimeDeals = try managedContext.fetch(secondFetchRequest)
+        } catch let error as NSError {
+            print("Couldn't fetch one time deals. \(error), \(error.userInfo)")
         }
     }
 
@@ -76,12 +87,18 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
         if let merchant = currentMerchant {
             merchantName.text = merchant.name
             merchantAddress.text = merchant.address
-            merchantOneTimeDeal.text = merchant.oneTimeDeal
             merchantContinualDeal.text = merchant.continualDeal
-
+//        merchantOneTimeDeal.text = ""
+/*
+            for (index, deal) in oneTimeDeals.enumerated() {
+                let merchantOneTimeDeals: UILabel = self.view.viewWithTag(index) as? UILabel
+                merchantOneTimeDeals.text = deal.oneTimeDealDescription as String
+            }
+*/
             if let address = merchantAddress.text {
                 setupMKView(address: address, MKView: merchantMapView)
             }
         }
     }
+
 }
