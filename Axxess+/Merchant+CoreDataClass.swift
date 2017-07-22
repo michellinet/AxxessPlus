@@ -21,7 +21,14 @@ public class Merchant: NSManagedObject {
         let merchant = Merchant(context: context)
         merchant.name = merchantInfo.name
         merchant.address = merchantInfo.address
-        merchant.oneTimeDeals = NSSet(array: merchantInfo.oneTimeDeals)
+        
+        var oneTimeDeals = Set<OneTimeDeal>()
+        for deal in merchantInfo.oneTimeDeals {
+            guard let newOneTimeDeal = OneTimeDeal.findOrCreateOneTimeDeal(matching: deal, in: context) else { continue }
+            oneTimeDeals.insert(newOneTimeDeal)
+        }
+    
+        merchant.oneTimeDeals = oneTimeDeals as NSSet
         merchant.continualDeal = merchantInfo.continualDeal
         merchant.id = merchantInfo.id
 

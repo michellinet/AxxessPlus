@@ -41,7 +41,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRa-nE-QVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.2000000000000002" y="-424.13793103448279"/>
+            <point key="canvasLocation" x="41" y="-424"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="89w-8E-zD9">
@@ -220,7 +220,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="np0-Ph-wm5">
-                                <rect key="frame" x="26" y="74" width="323" height="305.5"/>
+                                <rect key="frame" x="26" y="74" width="323" height="321.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="UlS-C8-JQe">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="20.5"/>
@@ -273,51 +273,21 @@
                                         </constraints>
                                     </mapView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="cZi-U1-WWA">
-                                        <rect key="frame" x="0.0" y="214" width="323" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="214" width="323" height="72"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One-Time Deal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nob-et-naS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One-Time Deals" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nob-et-naS">
                                                 <rect key="frame" x="0.0" y="0.0" width="161.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One-Time Deal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFC-vP-DH3">
-                                                <rect key="frame" x="161.5" y="1.5" width="161.5" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mko-oa-P0Z">
+                                                <rect key="frame" x="161.5" y="16" width="161.5" height="56"/>
+                                            </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="nob-et-naS" firstAttribute="leading" secondItem="cZi-U1-WWA" secondAttribute="leading" id="4WO-zk-RqE"/>
-                                            <constraint firstItem="nob-et-naS" firstAttribute="leading" secondItem="cZi-U1-WWA" secondAttribute="leading" id="V8V-my-EB4"/>
-                                            <constraint firstAttribute="trailing" secondItem="oFC-vP-DH3" secondAttribute="trailing" id="W0Q-oG-53G"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="MOq-iN-jFk">
-                                        <rect key="frame" x="0.0" y="249.5" width="323" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One-Time Deal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6g-8m-rq6">
-                                                <rect key="frame" x="0.0" y="0.0" width="161.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One-Time Deal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49v-My-bMn">
-                                                <rect key="frame" x="161.5" y="1.5" width="161.5" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="T6g-8m-rq6" firstAttribute="leading" secondItem="MOq-iN-jFk" secondAttribute="leading" id="jRa-yp-wn9"/>
-                                            <constraint firstItem="T6g-8m-rq6" firstAttribute="leading" secondItem="MOq-iN-jFk" secondAttribute="leading" id="rIZ-XI-XZh"/>
-                                            <constraint firstAttribute="trailing" secondItem="49v-My-bMn" secondAttribute="trailing" id="sXv-a1-bbF"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="Tga-FV-oE0">
-                                        <rect key="frame" x="0.0" y="285" width="323" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="301" width="323" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continual Deal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kb-f0-xF6">
                                                 <rect key="frame" x="0.0" y="0.0" width="161.5" height="20.5"/>
@@ -362,40 +332,12 @@
                         <outlet property="merchantContinualDeal" destination="nQn-lR-QXE" id="Wa1-g9-Led"/>
                         <outlet property="merchantMapView" destination="tWl-UQ-Cf0" id="hZC-6B-Z7c"/>
                         <outlet property="merchantName" destination="7dK-T8-Qow" id="gz6-Ji-ZLE"/>
-                        <outlet property="merchantOneTimeDeal" destination="oFC-vP-DH3" id="IeJ-qV-Nip"/>
+                        <outlet property="oneTimeDealsStackView" destination="Mko-oa-P0Z" id="MtR-fO-UWU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7U-lA-AFm" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1010" y="-424"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="M3U-Kc-ySP">
-            <objects>
-                <tableViewController id="MO5-Uu-Q9c" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vva-83-UTS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="x1f-Q5-A3s">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x1f-Q5-A3s" id="d68-rc-Iuf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="MO5-Uu-Q9c" id="B56-C8-HvK"/>
-                            <outlet property="delegate" destination="MO5-Uu-Q9c" id="i7T-Ed-BJZ"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fgp-fW-B09" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1009" y="-1111"/>
         </scene>
         <!--Directory-->
         <scene sceneID="47k-mh-NiB">

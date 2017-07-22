@@ -11,12 +11,12 @@ import CoreData
 
 
 public class OneTimeDeal: NSManagedObject {
-    class func findOrCreateOneTimeDeal(matching oneTimeDealInfo: AxxessOneTimeDeal, in context: NSManagedObjectContext) {
+    class func findOrCreateOneTimeDeal(matching oneTimeDealInfo: AxxessOneTimeDeal, in context: NSManagedObjectContext) -> OneTimeDeal? {
         let request: NSFetchRequest<OneTimeDeal> = OneTimeDeal.fetchRequest()
         request.predicate = NSPredicate(format: "id = %@", oneTimeDealInfo.id)
 
         let matches = try? context.fetch(request)
-        if let matches = matches, matches.count > 0 { return }
+        if let matches = matches, matches.count > 0 { return nil }
 
         let oneTimeDeal = OneTimeDeal(context: context)
         oneTimeDeal.oneTimeDealDescription = oneTimeDealInfo.oneTimeDealDescription
@@ -28,5 +28,7 @@ public class OneTimeDeal: NSManagedObject {
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+        
+        return oneTimeDeal
     }
 }

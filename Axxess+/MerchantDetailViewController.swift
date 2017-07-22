@@ -11,55 +11,51 @@ import MapKit
 import CoreData
 
 class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
-    private var merchants: [NSManagedObject] = []
-    private var oneTimeDeals: [NSManagedObject] = []
-
     @IBOutlet weak var merchantName: UILabel!
     @IBOutlet weak var merchantAddress: UILabel!
     @IBOutlet weak var merchantContinualDeal: UILabel!
+    @IBOutlet weak var oneTimeDealsStackView: UIStackView!
     @IBAction func dismissMerchantDetails(_ sender: Any) {
-
         navigationController?.popViewController(animated: true)
-
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         merchantMapView.delegate = self
-
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-
-        //fetch merchant
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Merchant")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
-
-        do {
-            merchants = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Couldn't fetch merchants. \(error), \(error.userInfo)")
-        }
-
-        //fetch deals for the merchant
-        let secondFetchRequest = NSFetchRequest<NSManagedObject>(entityName: "OneTimeDeal")
-        secondFetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
-        secondFetchRequest.predicate = NSPredicate(format: "%K == %@", "merchant.id", "currentMerchant.id")
-        do {
-            oneTimeDeals = try managedContext.fetch(secondFetchRequest)
-        } catch let error as NSError {
-            print("Couldn't fetch one time deals. \(error), \(error.userInfo)")
+ }
+    
+    var currentMerchant: Merchant?
+    
+    func configureView() {
+        if let merchant = currentMerchant {
+            merchantName.text = merchant.name
+            merchantAddress.text = merchant.address
+            merchantContinualDeal.text = merchant.continualDeal
+            
+            if let oneTimeDeals = merchant.oneTimeDeals as? Set<OneTimeDeal> {
+                for deal in oneTimeDeals {
+                    let dealLabel = UILabel()
+                    dealLabel.text = deal.oneTimeDealDescription
+                    oneTimeDealsStackView.addArrangedSubview(dealLabel)
+                }
+            }
+            
+            if let address = merchantAddress.text {
+                setupMKView(address: address, MKView: merchantMapView)
+            }
         }
     }
 
+    //MARK: Map View
     @IBOutlet weak var merchantMapView: MKMapView!
+   
     var annotation: MKPointAnnotation?
-
+    
     func setupMKView (address: String, MKView: MKMapView) {
         if let existingAnnotation = self.annotation {
             MKView.removeAnnotation(existingAnnotation)
         }
-
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { (placemarkArray, error) in
             if (error != nil) { return }
@@ -80,25 +76,4 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
         pin.pinTintColor = UIColor(red: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1)
         return pin
     }
-
-    var currentMerchant: Merchant?
-
-    func configureView() {
-        if let merchant = currentMerchant {
-            merchantName.text = merchant.name
-            merchantAddress.text = merchant.address
-            merchantContinualDeal.text = merchant.continualDeal
-//        merchantOneTimeDeal.text = ""
-/*
-            for (index, deal) in oneTimeDeals.enumerated() {
-                let merchantOneTimeDeals: UILabel = self.view.viewWithTag(index) as? UILabel
-                merchantOneTimeDeals.text = deal.oneTimeDealDescription as String
-            }
-*/
-            if let address = merchantAddress.text {
-                setupMKView(address: address, MKView: merchantMapView)
-            }
-        }
-    }
-
 }

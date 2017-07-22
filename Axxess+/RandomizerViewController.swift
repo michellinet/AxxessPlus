@@ -12,7 +12,7 @@ import MapKit
 
 class RandomizerViewController: UIViewController, MKMapViewDelegate {
 
-    private var merchants: [NSManagedObject] = []
+    private var merchants: [Merchant] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class RandomizerViewController: UIViewController, MKMapViewDelegate {
 
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Merchant")
+        let fetchRequest = NSFetchRequest<Merchant>(entityName: "Merchant")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 
         do {
@@ -36,7 +36,7 @@ class RandomizerViewController: UIViewController, MKMapViewDelegate {
         
         merchantName.text = randomMerchant.value(forKey: "name") as? String
         merchantAddress.text = randomMerchant.value(forKey: "address") as? String
-        merchantOneTimeDeal.text = randomMerchant.value(forKey: "oneTimeDeal") as? String
+//        merchantOneTimeDeal.text = randomMerchant.value(forKey: "oneTimeDeal") as? String
         merchantContinualDeal.text = randomMerchant.value(forKey: "continualDeal") as? String
 
         if let address = merchantAddress.text {
