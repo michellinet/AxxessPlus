@@ -99,25 +99,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func getMerchantsForCurrentVersion(context: NSManagedObjectContext) -> [AxxessMerchant] {
-        let merchantOne = AxxessMerchant(name: "TAP Thai Cuisine",
-                                         address: "3130 State St., Santa Barbara, CA 93105",
-                                         oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Dine-in only. One per table.)", id: "62")],
-                                         continualDeal: "Save 10% Thereafter.",
-                                         id: "1")
-
-        let merchantTwo = AxxessMerchant(name: "Live Oak Cafe",
-                                         address: "2220 Bath St., Santa Barbara, CA 93105",
-                                         oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free.", id: "239")],
-                                         continualDeal: "Save 10% Thereafter.",
-                                         id: "2")
-
-        let merchantThree = AxxessMerchant(name: "Los Agaves - De La Vina",
-                                           address: "2911 De La Vina St., Santa Barbara, CA 93105",
-                                           oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One 50% Off. (Excludes seafood & specials.)", id: "262")],
-                                           continualDeal: "Free Fountain Drink with Entree Purchase Thereafter.",
-                                           id: "3")
-
-        return [merchantOne, merchantTwo, merchantThree]
+        var merchants = [AxxessMerchant]()
+       
+        let merchant1 = AxxessMerchant(name: "Altamirano's Mexican Grill", address: "5838 Hollister Ave, Goleta, CA 93117", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Max Value $10). Dine in only.", id: "23")], continualDeal: "Save 10% Thereafter.", id: "1")
+        merchants.append(merchant1)
+        
+        let merchant2 = AxxessMerchant(name: "Boathouse", address: "2891 Cliff Dr, Santa Barbara, CA 93109", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Midweek Breakfast Special: Buy One Breakfast Entree, Get One Free. (Valid Mon-Thurs 7am-11am only. Excludes holidays.)", id: "180")], continualDeal: "Free Coffee, Tea or Juice with Breakfast Entree Purchase Thereafter. (Valid Mon-Thurs 7am-11am only. Excludes holidays.)", id: "2")
+        merchants.append(merchant2)
+        
+        let merchant3 = AxxessMerchant(name: "Borrello's Pizza & Pastaria", address: "3807 Santa Claus Ln, Carpinteria, CA 93013", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Save 50% on Your First Pizza.", id: "13")], continualDeal: "Save 10% Thereafter.", id: "3")
+        merchants.append(merchant3)
+        
+        let merchant4 = AxxessMerchant(name: "Brasil Arts Cafe", address: "1230 State St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free.", id: "109")], continualDeal: "Save 10% Thereafter.", id: "4")
+        merchants.append(merchant4)
+        
+        let merchant5 = AxxessMerchant(name: "Ca' Dario Pizzeria", address: "29 E Victoria St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Pizza or Panini, Get One Free.", id: "303")], continualDeal: "Save 10% Thereafter. (Dine in only.)", id: "5")
+        merchants.append(merchant5)
+        
+        let merchant6 = AxxessMerchant(name: "Ca' Dario Ristorante", address: "37 E Victoria St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Lunch Entree, Get One Free.", id: "293")], continualDeal: "Save 10% Thereafter. (Valid Mon-Thurs)", id: "6")
+        merchants.append(merchant6)
+        
+        let merchant7 = AxxessMerchant(name: "Cafe 154", address: "4151 Foothill Rd, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Salad or Sandwich, Get One Free.", id: "161")], continualDeal: "Save 10% Thereafter.", id: "7")
+        merchants.append(merchant7)
+       
+        //no continual
+        let merchant8 = AxxessMerchant(name: "Cajun Kitchen", address: "1924 De La Vina St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Espresso Drink, Get One Free OR Free Espresso Drink with Purchase of Entree. (Max 2 cards per table.)", id: "174")], continualDeal: "No continual deals.", id: "8")
+        merchants.append(merchant8)
+        
+        let merchant9 = AxxessMerchant(name: "California Pasta", address: "811 State St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free OR Buy One Entree & Fountain Soda, Get a Free Entree & Fountain Soda", id: "35")], continualDeal: "Save 10% Thereafter.", id: "9")
+        merchants.append(merchant9)
+        
+        let merchant10 = AxxessMerchant(name: "CalTaco", address: "7320 Hollister Ave, Goleta, CA 93117", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy Any Burger or Breakfast Item, Get One Free.", id: "290")], continualDeal: "Save 10% Thereafter.", id: "10")
+        merchants.append(merchant10)
+        
+        let merchant11 = AxxessMerchant(name: "Casa Blanca", address: "330 State St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Lunch or Sunday Brunch Entree, Get One 50% Off.", id: "68"), AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Dinner Entree, Get One 50% Off.", id: "203")], continualDeal: "Buy Two Entrees, Get an Appetizer or Dessert Free. Everytime!", id: "11")
+        merchants.append(merchant11)
+        
+        let merchant12 = AxxessMerchant(name: "Cecco Ristorante", address: "475 1st St, Solvang, CA 93463", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free.", id: "237")], continualDeal: "Save 10% Thereafter.", id: "12")
+        merchants.append(merchant12)
+        
+        return merchants
     }
 
 }
