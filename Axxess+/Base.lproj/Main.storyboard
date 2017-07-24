@@ -51,6 +51,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.30196078431372547" green="0.082352941176470587" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="9Fr-9A-r6D" kind="relationship" relationship="viewControllers" id="bzv-4s-l0h"/>
@@ -61,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="-1895" y="-136"/>
         </scene>
-        <!--Randomizer View Controller-->
+        <!--Randomizer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RandomizerViewController" customModule="Axxess_" customModuleProvider="target" sceneMemberID="viewController">
@@ -194,7 +199,7 @@
                             <constraint firstItem="7HS-Ug-xNu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="wVJ-E5-sRf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GJh-Wc-Pc3"/>
+                    <navigationItem key="navigationItem" title="Randomizer" id="GJh-Wc-Pc3"/>
                     <connections>
                         <outlet property="merchantAddress" destination="Pq4-hx-MNg" id="t3Z-4j-BBY"/>
                         <outlet property="merchantContinualDeal" destination="Nfv-HL-UK4" id="yde-Md-zh1"/>
@@ -343,7 +348,13 @@
         <scene sceneID="47k-mh-NiB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HMu-Gl-Ldh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Directory" id="rkG-BR-hOl"/>
+                    <tabBarItem key="tabBarItem" title="Directory" image="merchants" id="rkG-BR-hOl">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.30196078431372547" green="0.082352941176470587" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pXm-aC-giE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -362,7 +373,13 @@
         <scene sceneID="BLb-V3-eNm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Fr-9A-r6D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Randomizer" id="upI-Xf-JPe"/>
+                    <tabBarItem key="tabBarItem" title="Randomizer" image="randomizer" id="upI-Xf-JPe">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.30196078431372547" green="0.082352941176470587" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiL-fm-Lyx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -378,4 +395,8 @@
             <point key="canvasLocation" x="-946.39999999999998" y="275.71214392803603"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="merchants" width="20" height="22"/>
+        <image name="randomizer" width="24" height="24"/>
+    </resources>
 </document>

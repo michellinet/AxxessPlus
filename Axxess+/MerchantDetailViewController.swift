@@ -37,6 +37,9 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
                 for deal in oneTimeDeals {
                     let dealLabel = UILabel()
                     dealLabel.text = deal.oneTimeDealDescription
+                    dealLabel.numberOfLines = 0
+                    dealLabel.textColor = .darkGray
+                    dealLabel.font = UIFont(name: dealLabel.font.fontName, size: 15)
                     oneTimeDealsStackView.addArrangedSubview(dealLabel)
                 }
             }
