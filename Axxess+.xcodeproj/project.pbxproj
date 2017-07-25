@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01A30EE11F227D08006A7335 /* MerchantDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A30EE01F227D08006A7335 /* MerchantDetailTableViewController.swift */; };
 		01E4AE491F200EA50081E23E /* DirectoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */; };
 		01E4AE4B1F200F1E0081E23E /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */; };
 		01E4AE4F1F20485E0081E23E /* MerchantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */; };
@@ -45,7 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01A30EE01F227D08006A7335 /* MerchantDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantDetailTableViewController.swift; sourceTree = "<group>"; };
 		01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryTableViewCell.xib; sourceTree = "<group>"; };
 		01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewCell.swift; sourceTree = "<group>"; };
 		01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantDetailViewController.swift; sourceTree = "<group>"; };
@@ -144,11 +142,10 @@
 			isa = PBXGroup;
 			children = (
 				DF5ECA4B1F1AD08900CAEEBF /* DirectoryTableViewController.swift */,
-				01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */,
-				01A30EE01F227D08006A7335 /* MerchantDetailTableViewController.swift */,
 				01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */,
-				DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */,
 				01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */,
+				01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */,
+				DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */,
 				DF7188481EDFB70E0016B5EB /* Main.storyboard */,
 				01E4AE501F20487E0081E23E /* Core Data */,
 				DF5ECA4D1F1AD0FC00CAEEBF /* Supporting Files */,
@@ -318,7 +315,6 @@
 				DF5ECA501F1AD42000CAEEBF /* MyAxxess.xcdatamodeld in Sources */,
 				01E4AEA41F215A4B0081E23E /* OneTimeDeal+CoreDataProperties.swift in Sources */,
 				DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */,
-				01A30EE11F227D08006A7335 /* MerchantDetailTableViewController.swift in Sources */,
 				01E4AE4F1F20485E0081E23E /* MerchantDetailViewController.swift in Sources */,
 				DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */,
 				01E4AEA31F215A4B0081E23E /* OneTimeDeal+CoreDataClass.swift in Sources */,
