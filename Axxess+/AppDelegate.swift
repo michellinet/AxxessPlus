@@ -269,7 +269,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let merchant55 = AxxessMerchant(name: "IHOP, Goleta", address: "4765 Calle Real, Goleta, CA 93117", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Max Value: $10. Excludes holidays.)", id: "147")], continualDeal: "Save 10% Thereafter.", id: "55")
         merchants.append(merchant55)
 
-        let merchant56 = AxxessMerchant(name: "IHOP, Santa Barbara", address: "1701 State St, Santa Barabara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Max Value: $10. Excludes holidays.)", id: "151")], continualDeal: "Save 10% Thereafter.", id: "56")
+        let merchant56 = AxxessMerchant(name: "IHOP, Santa Barbara", address: "1701 State St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Max Value: $10. Excludes holidays.)", id: "151")], continualDeal: "Save 10% Thereafter.", id: "56")
         merchants.append(merchant56)
 
         let merchant57 = AxxessMerchant(name: "Jack's Bistro, Carpinteria", address: "5050 Carpinteria Ave, Carpinteria, CA 93013", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Breakfast or Lunch Entree, Get One 50% Off.", id: "224")], continualDeal: "Save 10% Thereafter.", id: "57")
@@ -317,7 +317,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let merchant71 = AxxessMerchant(name: "Los Tarascos Bakery", address: "314 E Haley St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Valid for dine-in or take-out.)", id: "248")], continualDeal: "Save 10% Thereafter.", id: "71")
         merchants.append(merchant71)
 
-        let merchant72 = AxxessMerchant(name: "Mandarin Palace", address: "3955 State St, Santa Barbara, CA 93105", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "No One-Time Deals.", id: "")], continualDeal: "Free Egg Rolls and Save 10% with purchase of One Entree. (One card per tabel or to-go order.)", id: "72")
+        let merchant72 = AxxessMerchant(name: "Mandarin Palace", address: "3955 State St, Santa Barbara, CA 93105", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "No One-Time Deals.", id: "")], continualDeal: "Free Egg Rolls and Save 10% with purchase of One Entree. (One card per table or to-go order.)", id: "72")
         merchants.append(merchant72)
 
         let merchant73 = AxxessMerchant(name: "Max's Restaurant & Cucina", address: "3514 State St, Santa Barbara, CA 93105", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Max Value: $13. Dine-in only. One card per table.)", id: "155")], continualDeal: "Save 10% Thereafter. (Dine-in only.)", id: "73")
@@ -450,7 +450,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let merchant114 = AxxessMerchant(name: "Silvergreens, Isla Vista", address: "900 Embarcadero Del Mar, Goleta, CA 93117", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Max Value: $10)", id: "370")], continualDeal: "Save 10% Thereafter.", id: "114")
         merchants.append(merchant114)
 
-        let merchant115 = AxxessMerchant(name: "Sorriso Italiano", address: "901 Embarcadero Del Mar, Goleta, A 93117", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One 50% Off.", id: "378"), AxxessOneTimeDeal(oneTimeDealDescription: "Save 15% on Your First Catering Order.", id: "")], continualDeal: "Free Salad or Drink with Purchase of Entree Thereafter.", id: "115")
+        let merchant115 = AxxessMerchant(name: "Sorriso Italiano", address: "901 Embarcadero Del Mar, Goleta, C A 93117", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One 50% Off.", id: "378"), AxxessOneTimeDeal(oneTimeDealDescription: "Save 15% on Your First Catering Order.", id: "")], continualDeal: "Free Salad or Drink with Purchase of Entree Thereafter.", id: "115")
         merchants.append(merchant115)
 
         let merchant116 = AxxessMerchant(name: "South Coast Deli, Carrillo", address: "10 E Carrillo St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Sammie or Salad, Get One Free.", id: "32")], continualDeal: "Get a Free Fountain Drink with Sammie or Salad Thereafter.", id: "116")
@@ -486,7 +486,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let merchant126 = AxxessMerchant(name: "The Drunken Crab", address: "416 State St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Max Value: $12, dine-in only.)", id: "380")], continualDeal: "Save 10% Thereafter.", id: "126")
         merchants.append(merchant126)
 
-        let merchant127 = AxxessMerchant(name: "The Neighborhood Corner Bar & Grill", address: "235 W Montecito St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Pint, Get One Free. (Not valid on NFL Sundays.)", id: "21"), AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Not valid on NFL Sundays.)", id: "361")], continualDeal: "$5 Appetizers everytime. (Served until 10pm. Not valid on NFL Sundays.)", id: "127")
+        let merchant127 = AxxessMerchant(name: "The Neighborhood Corner Bar & Grill", address: "235 W Montecito St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Pint, Get One Free. (Not valid on NFL Sundays.)", id: "21"), AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Entree, Get One Free. (Not valid on NFL Sundays.)", id: "361")], continualDeal: "$5 Appetizers every time. (Served until 10pm. Not valid on NFL Sundays.)", id: "127")
         merchants.append(merchant127)
 
         let merchant128 = AxxessMerchant(name: "Tower Pizza", address: "436 Alisal Rd, Solvang, CA 93463", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Save 50% On Your First Pizza. (Delivery & online orders excluded.)", id: "75")], continualDeal: "Save $3 on Extra-Large Pizzas, $2 on Large Pizzas, $1 on Medium Pizzas Thereafter. (Delivery & online orders excluded.)", id: "128")
@@ -498,7 +498,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let merchant130 = AxxessMerchant(name: "Uptown Lounge", address: "3126 State St, Santa Barbara, CA 93105", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Pizza or Entree, Get One Free.", id: "162"), AxxessOneTimeDeal(oneTimeDealDescription: "Save 50% on Your First Pizza or Entree.", id: "243")], continualDeal: "Save 10% Thereafter.", id: "130")
         merchants.append(merchant130)
 
-        let merchant131 = AxxessMerchant(name: "Valentino's Take 'n Bake Pizza", address: "4421 Hollister Ave, Santa Barbara, CA 93110", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Save 50% on Any PIzza. (Offers may not be combined. Not valid on Halloween, Super Bowl, or Valentine's Day.)", id: "11"), AxxessOneTimeDeal(oneTimeDealDescription: "Buy a 16in Val's Mega Combo Pizza, Get a Large Family Size Salaed or Large Cheese Pizza Free. (Offers may not be combined. Not valid on Halloween, Super Bowl, or Valentine's Day.)", id: "10")], continualDeal: "Save 10% on Pizza Orders Thereafter.", id: "131")
+        let merchant131 = AxxessMerchant(name: "Valentino's Take 'n Bake Pizza", address: "4421 Hollister Ave, Santa Barbara, CA 93110", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Save 50% on Any PIzza. (Offers may not be combined. Not valid on Halloween, Super Bowl, or Valentine's Day.)", id: "11"), AxxessOneTimeDeal(oneTimeDealDescription: "Buy a 16in Val's Mega Combo Pizza, Get a Large Family Size Salad or Large Cheese Pizza Free. (Offers may not be combined. Not valid on Halloween, Super Bowl, or Valentine's Day.)", id: "10")], continualDeal: "Save 10% on Pizza Orders Thereafter.", id: "131")
         merchants.append(merchant131)
 
         let merchant132 = AxxessMerchant(name: "Viva Santa Barbara", address: "1114 State St, Santa Barbara, CA 93101", oneTimeDeals: [AxxessOneTimeDeal(oneTimeDealDescription: "Buy One Fajita Plate, Get One Free. (Max 2 cards per table.)", id: "259")], continualDeal: "Save 10% Thereafter.", id: "132")
