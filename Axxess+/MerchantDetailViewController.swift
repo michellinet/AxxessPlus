@@ -14,10 +14,11 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var merchantName: UILabel!
     @IBOutlet weak var merchantAddress: UILabel!
     @IBOutlet weak var merchantContinualDeal: UILabel!
-    @IBOutlet weak var oneTimeDealsStackView: UIStackView!
     @IBAction func dismissMerchantDetails(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    @IBOutlet weak var oneTimeDealsStackView: UIStackView!
+//    @IBOutlet weak var oneTimeDealsView: OneTimeDealView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
             merchantName.text = merchant.name
             merchantAddress.text = merchant.address
             merchantContinualDeal.text = merchant.continualDeal
-            
+/*
             if let oneTimeDeals = merchant.oneTimeDeals as? Set<OneTimeDeal> {
                 for deal in oneTimeDeals {
                     let dealLabel = UILabel()
@@ -43,7 +44,13 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
                     oneTimeDealsStackView.addArrangedSubview(dealLabel)
                 }
             }
-            
+*/
+
+            if let oneTimeDeals = merchant.oneTimeDeals as? Set<OneTimeDeal> {
+                for deal in oneTimeDeals {
+                    
+                }
+            }
             if let address = merchantAddress.text {
                 setupMKView(address: address, MKView: merchantMapView)
             }

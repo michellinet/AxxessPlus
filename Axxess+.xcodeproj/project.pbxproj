@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01E07D501F29304600E9779F /* OneTimeDealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E07D4F1F29304600E9779F /* OneTimeDealView.xib */; };
+		01E07D521F29369C00E9779F /* OneTimeDealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E07D511F29369C00E9779F /* OneTimeDealView.swift */; };
 		01E4AE491F200EA50081E23E /* DirectoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */; };
 		01E4AE4B1F200F1E0081E23E /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */; };
 		01E4AE4F1F20485E0081E23E /* MerchantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E07D4F1F29304600E9779F /* OneTimeDealView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneTimeDealView.xib; sourceTree = "<group>"; };
+		01E07D511F29369C00E9779F /* OneTimeDealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeDealView.swift; sourceTree = "<group>"; };
 		01E4AE481F200EA50081E23E /* DirectoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryTableViewCell.xib; sourceTree = "<group>"; };
 		01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewCell.swift; sourceTree = "<group>"; };
 		01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantDetailViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				01E4AE4A1F200F1E0081E23E /* DirectoryTableViewCell.swift */,
 				01E4AE4E1F20485E0081E23E /* MerchantDetailViewController.swift */,
 				DF7188461EDFB70E0016B5EB /* RandomizerViewController.swift */,
+				01E07D4F1F29304600E9779F /* OneTimeDealView.xib */,
+				01E07D511F29369C00E9779F /* OneTimeDealView.swift */,
 				DF7188481EDFB70E0016B5EB /* Main.storyboard */,
 				01E4AE501F20487E0081E23E /* Core Data */,
 				DF5ECA4D1F1AD0FC00CAEEBF /* Supporting Files */,
@@ -282,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF71884F1EDFB70E0016B5EB /* LaunchScreen.storyboard in Resources */,
+				01E07D501F29304600E9779F /* OneTimeDealView.xib in Resources */,
 				DF71884C1EDFB70E0016B5EB /* Assets.xcassets in Resources */,
 				DF71884A1EDFB70E0016B5EB /* Main.storyboard in Resources */,
 				01E4AE491F200EA50081E23E /* DirectoryTableViewCell.xib in Resources */,
@@ -311,6 +318,7 @@
 			files = (
 				DF7188471EDFB70E0016B5EB /* RandomizerViewController.swift in Sources */,
 				01E4AEA51F215A4B0081E23E /* Merchant+CoreDataClass.swift in Sources */,
+				01E07D521F29369C00E9779F /* OneTimeDealView.swift in Sources */,
 				01E4AEA61F215A4B0081E23E /* Merchant+CoreDataProperties.swift in Sources */,
 				DF5ECA501F1AD42000CAEEBF /* MyAxxess.xcdatamodeld in Sources */,
 				01E4AEA41F215A4B0081E23E /* OneTimeDeal+CoreDataProperties.swift in Sources */,
