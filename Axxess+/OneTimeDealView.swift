@@ -15,17 +15,27 @@ class OneTimeDealView: UIView {
     @IBOutlet weak var dealDescription: UILabel!
     @IBOutlet weak var dealActiveSwitch: UISwitch!
 
-    var deal: OneTimeDeal
-
-    init(deal: OneTimeDeal) {
-        self.deal = deal
-        super.init(frame: CGRect(x: 0, y: 0, width: 375, height: 105 ) )
+    var deal: OneTimeDeal!
+    
+    class func createOneTimeDealView(deal: OneTimeDeal) -> OneTimeDealView {
+        let nib = UINib(nibName: "OneTimeDealView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! OneTimeDealView
+        nib.deal = deal
+        nib.updateView()
+        return nib
+    }
+    
+    func showToggle(hidden: Bool) {
+        dealActiveSwitch.isHidden = hidden
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @IBAction func switchWasToggled(_ sender: Any) {
+        if dealActiveSwitch.isOn {
+           usedIndicator.image = #imageLiteral(resourceName: "discount-purple")
+        } else {
+            usedIndicator.image = #imageLiteral(resourceName: "discount-grey")
+        }
     }
-
+    
 
     func updateView() {
         if deal.id != "" {

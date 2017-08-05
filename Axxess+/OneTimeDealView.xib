@@ -49,6 +49,9 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWz-cc-1CZ">
                             <rect key="frame" x="308.5" y="27" width="32.5" height="31"/>
                             <color key="onTintColor" red="0.30196078430000001" green="0.08235294118" blue="0.72941176470000002" alpha="0.64985873287671225" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="switchWasToggled:" destination="iN0-l3-epB" eventType="valueChanged" id="hza-UM-w93"/>
+                            </connections>
                         </switch>
                     </subviews>
                 </stackView>
@@ -63,6 +66,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="dealActiveSwitch" destination="XWz-cc-1CZ" id="yoF-oe-5Ey"/>
                 <outlet property="dealDescription" destination="4Ul-Ab-mDO" id="F1l-vu-mIi"/>
                 <outlet property="dealNumber" destination="OKY-tv-8eW" id="vyA-2R-Ayd"/>
                 <outlet property="usedIndicator" destination="nWc-iU-mME" id="AMM-Qy-Hby"/>

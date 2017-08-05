@@ -48,9 +48,11 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
 
             if let oneTimeDeals = merchant.oneTimeDeals as? Set<OneTimeDeal> {
                 for deal in oneTimeDeals {
-                    
+                    let view = OneTimeDealView.createOneTimeDealView(deal: deal)
+                    oneTimeDealsStackView.addArrangedSubview(view)
                 }
             }
+            
             if let address = merchantAddress.text {
                 setupMKView(address: address, MKView: merchantMapView)
             }
