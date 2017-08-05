@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OneTimeDealView" customModule="Axxess_" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+            <rect key="frame" x="0.0" y="0.0" width="369" height="105"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JTO-lk-bLW">
-                    <rect key="frame" x="5" y="5" width="375" height="105"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JTO-lk-bLW">
+                    <rect key="frame" x="10" y="10" width="339" height="85"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-Sd-fQt">
-                            <rect key="frame" x="0.0" y="0.0" width="35" height="105"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" axis="vertical" distribution="fillProportionally" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-Sd-fQt">
+                            <rect key="frame" x="0.0" y="12.5" width="35" height="60"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discount-grey" translatesAutoresizingMaskIntoConstraints="NO" id="nWc-iU-mME">
                                     <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -29,7 +29,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKY-tv-8eW">
-                                    <rect key="frame" x="0.0" y="33" width="35" height="72"/>
+                                    <rect key="frame" x="0.0" y="33" width="35" height="27"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="35" id="KxU-lU-q05"/>
                                     </constraints>
@@ -39,25 +39,26 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ul-Ab-mDO">
-                            <rect key="frame" x="43" y="0.0" width="332" height="105"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="752" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ul-Ab-mDO">
+                            <rect key="frame" x="43" y="0.0" width="257.5" height="85"/>
                             <string key="text">Buy a 16 in Val's Mega Combo Pizza, Get a Large Family Size Salad or Large Cheese Pizza Free. (Offers may not be combined. Not valid on Halloween , Super Bowl, or Valentine's Day.)</string>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWz-cc-1CZ">
+                            <rect key="frame" x="308.5" y="27" width="32.5" height="31"/>
+                            <color key="onTintColor" red="0.30196078430000001" green="0.08235294118" blue="0.72941176470000002" alpha="0.64985873287671225" colorSpace="custom" customColorSpace="sRGB"/>
+                        </switch>
                     </subviews>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="JTO-lk-bLW" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="E9s-wd-AVh"/>
-                <constraint firstItem="JTO-lk-bLW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="Gqe-NZ-Zg3"/>
-                <constraint firstItem="JTO-lk-bLW" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="STb-PJ-Pp9"/>
-                <constraint firstAttribute="trailing" secondItem="JTO-lk-bLW" secondAttribute="trailing" constant="5" id="ejy-0X-tXW"/>
-                <constraint firstItem="JTO-lk-bLW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="hSQ-Ti-cUf"/>
-                <constraint firstItem="JTO-lk-bLW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nmk-49-MFg"/>
-                <constraint firstAttribute="bottom" secondItem="JTO-lk-bLW" secondAttribute="bottom" constant="5" id="sIi-EM-9NV"/>
+                <constraint firstItem="JTO-lk-bLW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Gqe-NZ-Zg3"/>
+                <constraint firstAttribute="trailing" secondItem="JTO-lk-bLW" secondAttribute="trailing" constant="20" id="ejy-0X-tXW"/>
+                <constraint firstItem="JTO-lk-bLW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="hSQ-Ti-cUf"/>
+                <constraint firstAttribute="bottom" secondItem="JTO-lk-bLW" secondAttribute="bottom" constant="10" id="sIi-EM-9NV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -66,7 +67,7 @@
                 <outlet property="dealNumber" destination="OKY-tv-8eW" id="vyA-2R-Ayd"/>
                 <outlet property="usedIndicator" destination="nWc-iU-mME" id="AMM-Qy-Hby"/>
             </connections>
-            <point key="canvasLocation" x="247.5" y="-214.5"/>
+            <point key="canvasLocation" x="198.5" y="-363.5"/>
         </view>
     </objects>
     <resources>
