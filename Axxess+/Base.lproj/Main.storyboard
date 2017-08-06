@@ -321,19 +321,27 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Merchant Details" id="VRB-uk-eBL">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="gn6-W6-WJd">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="gn6-W6-WJd">
                             <color key="tintColor" red="0.30196078430000001" green="0.08235294118" blue="0.72941176470000002" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="dismissMerchantDetails:" destination="p1L-gy-vte" id="hVY-R2-5Pw"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="2NT-nF-MhM">
+                            <color key="tintColor" red="0.30196078430000001" green="0.08235294118" blue="0.72941176470000002" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="editButtonPressed:" destination="p1L-gy-vte" id="x38-wL-yAA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="leftBarButtonItem" destination="gn6-W6-WJd" id="YJ2-Zn-oXF"/>
                         <outlet property="merchantAddress" destination="xJm-B9-mYt" id="6Qg-Rm-7Si"/>
                         <outlet property="merchantContinualDeal" destination="nQn-lR-QXE" id="Wa1-g9-Led"/>
                         <outlet property="merchantMapView" destination="tWl-UQ-Cf0" id="hZC-6B-Z7c"/>
                         <outlet property="merchantName" destination="7dK-T8-Qow" id="gz6-Ji-ZLE"/>
                         <outlet property="oneTimeDealsStackView" destination="cZi-U1-WWA" id="jKN-ea-3SO"/>
+                        <outlet property="rightBarButtonItem" destination="2NT-nF-MhM" id="o4z-wY-Gr7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7U-lA-AFm" sceneMemberID="firstResponder"/>

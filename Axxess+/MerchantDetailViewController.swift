@@ -14,17 +14,74 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var merchantName: UILabel!
     @IBOutlet weak var merchantAddress: UILabel!
     @IBOutlet weak var merchantContinualDeal: UILabel!
-    @IBAction func dismissMerchantDetails(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+    @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var oneTimeDealsStackView: UIStackView!
-//    @IBOutlet weak var oneTimeDealsView: OneTimeDealView!
 
+    
+// MARK: UIBarButtonItems
+    
+    private func updateBarButtonsForMode(editModeOn: Bool) {
+        if editModeOn == true {
+            leftBarButtonItem.title = "Cancel"
+            leftBarButtonItem.style = .done
+            leftBarButtonItem.action =  #selector(cancelButtonTapped(sender:))
+            
+            rightBarButtonItem.title = "Save"
+            rightBarButtonItem.style = .plain
+            rightBarButtonItem.action = #selector(saveButtonTapped(sender:))
+        } else {
+            leftBarButtonItem.title = "Done"
+            leftBarButtonItem.style = .done
+            leftBarButtonItem.action = #selector(doneButtonTapped(sender:))
+            
+            rightBarButtonItem.title = "Edit"
+            rightBarButtonItem.style = .plain
+            rightBarButtonItem.action = #selector(editButtonPressed(_:))
+        }
+    }
+    
+    @objc private func cancelButtonTapped(sender: UIBarButtonItem) {
+        for view in oneTimeDealsStackView.arrangedSubviews {
+            if let oneTimeDealView = view as? OneTimeDealView {
+                UIView.animate(withDuration: 0.3, animations: {
+                    oneTimeDealView.dealActiveSwitch.isHidden = true
+                })
+            }
+        }
+        updateBarButtonsForMode(editModeOn: false)
+    }
+    
+   @objc private func saveButtonTapped(sender: UIBarButtonItem) {
+        for view in oneTimeDealsStackView.arrangedSubviews {
+            if let oneTimeDealView = view as? OneTimeDealView {
+                oneTimeDealView.saveDealStatus()
+            }
+        }
+    }
+    
+    @objc private func doneButtonTapped(sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+        updateBarButtonsForMode(editModeOn: false)
+    }
+   
+    @IBAction func editButtonPressed(_ sender: Any) {
+        updateBarButtonsForMode(editModeOn: true)
+        for view in oneTimeDealsStackView.arrangedSubviews {
+            if let oneTimeDealView = view as? OneTimeDealView {
+                UIView.animate(withDuration: 0.3, animations: { 
+                    oneTimeDealView.dealActiveSwitch.isHidden = false
+                })
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         merchantMapView.delegate = self
- }
+        updateBarButtonsForMode(editModeOn: false)
+    }
     
     var currentMerchant: Merchant?
     
@@ -33,18 +90,6 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
             merchantName.text = merchant.name
             merchantAddress.text = merchant.address
             merchantContinualDeal.text = merchant.continualDeal
-/*
-            if let oneTimeDeals = merchant.oneTimeDeals as? Set<OneTimeDeal> {
-                for deal in oneTimeDeals {
-                    let dealLabel = UILabel()
-                    dealLabel.text = deal.oneTimeDealDescription
-                    dealLabel.numberOfLines = 0
-                    dealLabel.textColor = .darkGray
-                    dealLabel.font = UIFont(name: dealLabel.font.fontName, size: 15)
-                    oneTimeDealsStackView.addArrangedSubview(dealLabel)
-                }
-            }
-*/
 
             if let oneTimeDeals = merchant.oneTimeDeals as? Set<OneTimeDeal> {
                 for deal in oneTimeDeals {

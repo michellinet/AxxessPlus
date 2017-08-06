@@ -44,8 +44,9 @@ class DirectoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Merchant", for: indexPath) as! DirectoryTableViewCell
         cell.name.text = merchant.value(forKeyPath: "name") as? String
         cell.address.text = merchant.value(forKeyPath: "address") as? String
+        
+        
         cell.useOneTimeDeal.setImage(#imageLiteral(resourceName: "discount-purple"), for: .normal)
-
         cell.viewDetails.setImage(#imageLiteral(resourceName: "disclosure-indicator"), for: .normal)
         return cell
     }

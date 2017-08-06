@@ -46,7 +46,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWz-cc-1CZ">
+                        <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWz-cc-1CZ">
                             <rect key="frame" x="308.5" y="27" width="32.5" height="31"/>
                             <color key="onTintColor" red="0.30196078430000001" green="0.08235294118" blue="0.72941176470000002" alpha="0.64985873287671225" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

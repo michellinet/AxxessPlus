@@ -30,12 +30,24 @@ class OneTimeDealView: UIView {
 
     @IBAction func switchWasToggled(_ sender: Any) {
         if dealActiveSwitch.isOn {
-           usedIndicator.image = #imageLiteral(resourceName: "discount-purple")
+            usedIndicator.image = #imageLiteral(resourceName: "discount-purple")
         } else {
             usedIndicator.image = #imageLiteral(resourceName: "discount-grey")
         }
     }
     
+    func saveDealStatus() {
+        if dealActiveSwitch.isOn {
+            deal.used = false
+        } else {
+            deal.used = true
+        }
+        do {
+            try deal.managedObjectContext?.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
+    }
 
     func updateView() {
         if deal.id != "" {
@@ -46,8 +58,10 @@ class OneTimeDealView: UIView {
 
         if deal.used {
             usedIndicator.image = #imageLiteral(resourceName: "discount-grey")
+            dealActiveSwitch.isOn = false
         } else {
             usedIndicator.image = #imageLiteral(resourceName: "discount-purple")
+            dealActiveSwitch.isOn = true
         }
 
         dealDescription.text = deal.oneTimeDealDescription
