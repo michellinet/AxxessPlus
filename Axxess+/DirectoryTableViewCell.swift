@@ -13,9 +13,7 @@ class DirectoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var useOneTimeDeal: UIButton!
-    @IBOutlet weak var viewDetails: UIButton!
-
+   
     override func awakeFromNib() {
         super.awakeFromNib()
     }
