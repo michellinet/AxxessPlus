@@ -68,11 +68,5 @@ class OneTimeDealView: UIView {
         dealDescription.text = deal.oneTimeDealDescription
         dealDescription.textColor = UIColor.darkGray
     }
-    
-//
-//    var height = 128.0
-//    
-//    override var intrinsicContentSize: CGSize {
-//        return CGSize(width: 1.0, height: height)
-//    }
+
 }

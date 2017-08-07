@@ -23,18 +23,34 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     
     private func updateBarButtonsForMode(editModeOn: Bool) {
         if editModeOn == true {
+            for view in oneTimeDealsStackView.arrangedSubviews {
+                if let oneTimeDealView = view as? OneTimeDealView {
+                    UIView.animate(withDuration: 0.3, animations: {
+                        oneTimeDealView.dealActiveSwitch.isHidden = false
+                    })
+                }
+            }
+
             leftBarButtonItem.title = "Cancel"
             leftBarButtonItem.style = .done
             leftBarButtonItem.action =  #selector(cancelButtonTapped(sender:))
-            
+
             rightBarButtonItem.title = "Save"
             rightBarButtonItem.style = .plain
             rightBarButtonItem.action = #selector(saveButtonTapped(sender:))
         } else {
+            for view in oneTimeDealsStackView.arrangedSubviews {
+                if let oneTimeDealView = view as? OneTimeDealView {
+                    UIView.animate(withDuration: 0.3, animations: {
+                        oneTimeDealView.dealActiveSwitch.isHidden = true
+                    })
+                }
+            }
+
             leftBarButtonItem.title = "Done"
             leftBarButtonItem.style = .done
             leftBarButtonItem.action = #selector(doneButtonTapped(sender:))
-            
+
             rightBarButtonItem.title = "Edit"
             rightBarButtonItem.style = .plain
             rightBarButtonItem.action = #selector(editButtonPressed(_:))
@@ -42,22 +58,34 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     }
     
     @objc private func cancelButtonTapped(sender: UIBarButtonItem) {
+        updateBarButtonsForMode(editModeOn: false)
         for view in oneTimeDealsStackView.arrangedSubviews {
             if let oneTimeDealView = view as? OneTimeDealView {
-                UIView.animate(withDuration: 0.3, animations: {
-                    oneTimeDealView.dealActiveSwitch.isHidden = true
-                })
+                oneTimeDealView.updateView()
             }
         }
-        updateBarButtonsForMode(editModeOn: false)
     }
     
-   @objc private func saveButtonTapped(sender: UIBarButtonItem) {
+    @objc private func saveButtonTapped(sender: UIBarButtonItem) {
+        var alert = UIAlertController()
         for view in oneTimeDealsStackView.arrangedSubviews {
             if let oneTimeDealView = view as? OneTimeDealView {
                 oneTimeDealView.saveDealStatus()
+                if oneTimeDealView.dealActiveSwitch.isOn {
+                    alert = UIAlertController(title: "Cash Out!", message: "You've used your one time deal!", preferredStyle: .alert)
+                    alert = UIAlertController(title: "Whoop!", message: "Your deal is re-activated!", preferredStyle: .alert)
+                } else {
+                    alert = UIAlertController(title: "Congrats!", message: "You've used your one time deal!", preferredStyle: .alert)
+                }
             }
         }
+
+        let dismiss = UIAlertAction(title: "Sweet!", style: .default, handler: nil)
+        dismiss.setValue(UIColor(colorLiteralRed: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
+        alert.addAction(dismiss)
+        self.present(alert, animated: true, completion: nil)
+        updateBarButtonsForMode(editModeOn: false)
+        
     }
     
     @objc private func doneButtonTapped(sender: UIBarButtonItem) {
@@ -67,13 +95,6 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
    
     @IBAction func editButtonPressed(_ sender: Any) {
         updateBarButtonsForMode(editModeOn: true)
-        for view in oneTimeDealsStackView.arrangedSubviews {
-            if let oneTimeDealView = view as? OneTimeDealView {
-                UIView.animate(withDuration: 0.3, animations: { 
-                    oneTimeDealView.dealActiveSwitch.isHidden = false
-                })
-            }
-        }
     }
     
     override func viewDidLoad() {
@@ -106,7 +127,7 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
         }
     }
 
-    //MARK: Map View
+// MARK: Map View
     @IBOutlet weak var merchantMapView: MKMapView!
    
     var annotation: MKPointAnnotation?
