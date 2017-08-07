@@ -14,7 +14,8 @@ class OneTimeDealView: UIView {
     @IBOutlet weak var dealNumber: UILabel!
     @IBOutlet weak var dealDescription: UILabel!
     @IBOutlet weak var dealActiveSwitch: UISwitch!
-
+    @IBOutlet weak var containerStackView: UIStackView!
+    
     var deal: OneTimeDeal!
     
     class func createOneTimeDealView(deal: OneTimeDeal) -> OneTimeDealView {
@@ -67,4 +68,11 @@ class OneTimeDealView: UIView {
         dealDescription.text = deal.oneTimeDealDescription
         dealDescription.textColor = UIColor.darkGray
     }
+    
+//
+//    var height = 128.0
+//    
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: 1.0, height: height)
+//    }
 }
