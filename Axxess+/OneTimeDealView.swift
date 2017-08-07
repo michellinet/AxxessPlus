@@ -65,5 +65,6 @@ class OneTimeDealView: UIView {
         }
 
         dealDescription.text = deal.oneTimeDealDescription
+        dealDescription.textColor = UIColor.darkGray
     }
 }
