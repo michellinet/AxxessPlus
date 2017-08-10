@@ -112,8 +112,9 @@ class DirectoryTableViewController: UITableViewController, NSFetchedResultsContr
             if let indexPath = indexPath, let merchant = anObject as? Merchant {
                 let cell = tableView.cellForRow(at: indexPath) as! DirectoryTableViewCell
                 if merchant.checkAvailableOneTimeDeals() == 0 {
-                   cell.containerStackView.removeArrangedSubview(cell.dealIndicatorView)
+                   cell.dealIndicatorView.isHidden = true
                 } else {
+                    cell.dealIndicatorView.isHidden = false
                     cell.dealCount.text = "\(merchant.checkAvailableOneTimeDeals())"
                 }
             }
