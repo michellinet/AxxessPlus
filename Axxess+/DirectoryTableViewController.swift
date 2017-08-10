@@ -15,19 +15,7 @@ class DirectoryTableViewController: UITableViewController, NSFetchedResultsContr
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     fileprivate var fetchedResultsController: NSFetchedResultsController<Merchant>!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-//        do {
-//            try fetchedResultsController.performFetch()
-//        } catch {
-//            fatalError("Failure to perform fetch: \(error)")
-//        }
-        
-        tableView.reloadData()
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,13 +61,12 @@ class DirectoryTableViewController: UITableViewController, NSFetchedResultsContr
         cell.name.text = merchant.value(forKeyPath: "name") as? String
         cell.address.text = merchant.value(forKeyPath: "address") as? String
         if merchant.checkAvailableOneTimeDeals() == 0 {
-            cell.containerStackView.removeArrangedSubview(cell.dealIndicatorView)
+            cell.dealIndicatorView.isHidden = true
         } else {
+            cell.dealIndicatorView.isHidden = false
             cell.dealCount.text = "\(merchant.checkAvailableOneTimeDeals())"
         }
-        
-        
-        
+
         return cell
     }
 
