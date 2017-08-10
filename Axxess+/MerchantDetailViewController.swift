@@ -72,10 +72,9 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
             if let oneTimeDealView = view as? OneTimeDealView {
                 oneTimeDealView.saveDealStatus()
                 if oneTimeDealView.dealActiveSwitch.isOn {
-                    alert = UIAlertController(title: "Cash Out!", message: "You've used your one time deal!", preferredStyle: .alert)
                     alert = UIAlertController(title: "Whoop!", message: "Your deal is re-activated!", preferredStyle: .alert)
                 } else {
-                    alert = UIAlertController(title: "Congrats!", message: "You've used your one time deal!", preferredStyle: .alert)
+                    alert = UIAlertController(title: "Cash Out!", message: "You've used your one time deal!", preferredStyle: .alert)
                 }
             }
         }
