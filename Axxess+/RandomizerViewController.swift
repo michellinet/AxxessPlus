@@ -29,10 +29,19 @@ class RandomizerViewController: UIViewController, MKMapViewDelegate {
             print("Couldn't fetch. \(error), \(error.userInfo)")
         }
     }
+    func random(_ n:Int) -> Int {
+        return Int(arc4random_uniform(UInt32(n)))
+    }
 
     @IBAction func tellMeWhatToEatPressed(_ sender: Any) {
-        let randomIndex = Int(arc4random() % 3)
-        let randomMerchant = merchants[randomIndex]
+        var merchantsWithActiveDeal = [Merchant]()
+        for merchant in merchants {
+            if merchant.checkAvailableOneTimeDeals() > 0 {
+                merchantsWithActiveDeal.append(merchant)
+            }
+        }
+        let randomIndex = random(merchantsWithActiveDeal.count - 1)
+        let randomMerchant = merchantsWithActiveDeal[randomIndex]
         
         merchantName.text = randomMerchant.value(forKey: "name") as? String
         merchantAddress.text = randomMerchant.value(forKey: "address") as? String
@@ -86,4 +95,3 @@ class RandomizerViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var merchantContinualDeal: UILabel!
 }
-
