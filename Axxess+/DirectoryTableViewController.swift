@@ -35,6 +35,12 @@ class DirectoryTableViewController: UITableViewController {
         }
     }
     
+    //TODO: refactor & set up FRC
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return merchants.count
     }
@@ -44,9 +50,11 @@ class DirectoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Merchant", for: indexPath) as! DirectoryTableViewCell
         cell.name.text = merchant.value(forKeyPath: "name") as? String
         cell.address.text = merchant.value(forKeyPath: "address") as? String
-        cell.useOneTimeDeal.setImage(#imageLiteral(resourceName: "discount-purple"), for: .normal)
-
-        cell.viewDetails.setImage(#imageLiteral(resourceName: "disclosure-indicator"), for: .normal)
+        if merchant.checkAvailableOneTimeDeals() == 0 {
+            cell.containerStackView.removeArrangedSubview(cell.dealIndicatorView)
+        } else {
+            cell.dealCount.text = "\(merchant.checkAvailableOneTimeDeals())"
+        }
         return cell
     }
 
@@ -62,5 +70,4 @@ class DirectoryTableViewController: UITableViewController {
             nextScene.currentMerchant = selectedMerchant
         }
     }
-
 }

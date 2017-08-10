@@ -13,10 +13,13 @@ class DirectoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var useOneTimeDeal: UIButton!
-    @IBOutlet weak var viewDetails: UIButton!
-
+    @IBOutlet weak var dealIndicatorView: UIView!
+    @IBOutlet weak var dealCount: UILabel!
+    @IBOutlet weak var containerStackView: UIStackView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        dealIndicatorView.layer.cornerRadius = dealIndicatorView.frame.height/2
     }
+
 }

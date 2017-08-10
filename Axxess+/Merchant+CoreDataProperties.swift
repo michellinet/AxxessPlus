@@ -40,3 +40,18 @@ extension Merchant {
     @NSManaged public func removeFromOneTimeDeals(_ values: NSSet)
 
 }
+
+// MARK: Helpers
+extension Merchant {
+    func checkAvailableOneTimeDeals() -> Int {
+        var availableDealsCount = 0
+        
+        guard let deals = oneTimeDeals as? Set<OneTimeDeal> else { assertionFailure("Failed to cast merchant.oneTimeDeals as Set<OneTimeDeal>"); return 0 }
+        
+        for deal in deals {
+            if !deal.used { availableDealsCount += 1 }
+        }
+        
+        return availableDealsCount
+    }
+}
