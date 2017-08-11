@@ -10,13 +10,16 @@ import UIKit
 import CoreData
 import MapKit
 
-class RandomizerViewController: UIViewController, MKMapViewDelegate {
+class RandomizerViewController: UIViewController {
+    
+    @IBOutlet weak var randomMerchantNameLabel: UILabel!
+    @IBOutlet weak var numberOfDealsActiveLabel: UILabel!
+    @IBOutlet weak var seeDetailsButton: UIButton!
 
     private var merchants: [Merchant] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        merchantMapView.delegate = self
 
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -31,59 +34,28 @@ class RandomizerViewController: UIViewController, MKMapViewDelegate {
     }
 
     @IBAction func tellMeWhatToEatPressed(_ sender: Any) {
-        let randomIndex = Int(arc4random() % 3)
-        let randomMerchant = merchants[randomIndex]
-        
-        merchantName.text = randomMerchant.value(forKey: "name") as? String
-        merchantAddress.text = randomMerchant.value(forKey: "address") as? String
-//        merchantOneTimeDeal.text = randomMerchant.value(forKey: "oneTimeDeal") as? String
-        merchantContinualDeal.text = randomMerchant.value(forKey: "continualDeal") as? String
-
-        if let address = merchantAddress.text {
-            setupMKView(address: address, MKView: merchantMapView)
-        }
-    }
-
-    @IBOutlet weak var merchantName: UILabel!
-    
-    @IBOutlet weak var merchantAddress: UILabel!
-    
-    @IBOutlet weak var merchantMapView: MKMapView!
-    
-    var annotation: MKPointAnnotation?
-    
-    func setupMKView (address: String, MKView: MKMapView) {
-
-        if let existingAnnotation = self.annotation {
-            MKView.removeAnnotation(existingAnnotation)
-        }
-
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(address) { (placemarkArray, error) in
-            if (error != nil) {
-                return
-            }
-            
-            if let placemark = placemarkArray?.first, let location = placemark.location {
-                let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpanMake(1/69, 1/69))
-                MKView.setRegion(region, animated: true)
-                
-                let newAnnotation = MKPointAnnotation()
-                self.annotation = newAnnotation
-                newAnnotation.coordinate = location.coordinate
-                MKView.showAnnotations([newAnnotation], animated: true)
+        // Find a random merchant with minimum 1 deal available.
+        var merchantsWithActiveDeal = [Merchant]()
+        for merchant in merchants {
+            if merchant.checkAvailableOneTimeDeals() > 0 {
+                merchantsWithActiveDeal.append(merchant)
             }
         }
+        let randomIndex = random(merchantsWithActiveDeal.count - 1)
+        let randomMerchant = merchantsWithActiveDeal[randomIndex]
+        let randomMerchantDealsCount = randomMerchant.checkAvailableOneTimeDeals()
+       
+        // Use random merchant's details to update view.
+        randomMerchantNameLabel.text = randomMerchant.value(forKey: "name") as? String
+        if randomMerchantDealsCount == 1 {
+            numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deal Active"
+        } else {
+            numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deals Active"
+        }
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let pin = MKPinAnnotationView()
-        pin.pinTintColor = UIColor(red: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1)
-        return pin
+    //MARK: Helpers
+    func random(_ n:Int) -> Int {
+        return Int(arc4random_uniform(UInt32(n)))
     }
-    
-    @IBOutlet weak var merchantOneTimeDeal: UILabel!
-
-    @IBOutlet weak var merchantContinualDeal: UILabel!
 }
-
