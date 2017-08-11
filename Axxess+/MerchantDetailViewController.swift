@@ -117,7 +117,6 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
                     view.translatesAutoresizingMaskIntoConstraints = false
                     oneTimeDealsStackView.addArrangedSubview(view)
                 }
-                
             }
             
             if let address = merchantAddress.text {

@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,22 +16,22 @@
             <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O83-IS-6Wi" id="YsR-5h-J5j">
-                <rect key="frame" x="0.0" y="0.0" width="310" height="46.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="310" height="47"/>
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOG-z0-4Rl">
-                        <rect key="frame" x="15" y="6.5" width="280" height="33"/>
+                        <rect key="frame" x="7" y="6.5" width="296" height="33"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="754" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ika-Rn-O9f">
-                                <rect key="frame" x="0.0" y="0.0" width="247" height="33"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ika-Rn-O9f">
+                                <rect key="frame" x="0.0" y="0.0" width="263" height="33"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd0-1h-eZx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd0-1h-eZx">
                                         <rect key="frame" x="0.0" y="0.0" width="37.5" height="18.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-ez-nHN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-ez-nHN">
                                         <rect key="frame" x="0.0" y="18.5" width="31" height="14.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
@@ -40,8 +39,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9j-Mc-gjF">
-                                <rect key="frame" x="247" y="0.0" width="33" height="33"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9j-Mc-gjF">
+                                <rect key="frame" x="263" y="0.0" width="33" height="33"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6b-cN-qZa">
                                         <rect key="frame" x="12" y="7.5" width="9.5" height="18"/>
@@ -61,8 +60,8 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="WOG-z0-4Rl" secondAttribute="trailing" constant="7" id="IWC-zn-0Oc"/>
-                    <constraint firstItem="WOG-z0-4Rl" firstAttribute="leading" secondItem="YsR-5h-J5j" secondAttribute="leadingMargin" constant="7" id="NeX-2w-L5S"/>
+                    <constraint firstAttribute="trailing" secondItem="WOG-z0-4Rl" secondAttribute="trailing" constant="7" id="IWC-zn-0Oc"/>
+                    <constraint firstItem="WOG-z0-4Rl" firstAttribute="leading" secondItem="YsR-5h-J5j" secondAttribute="leading" constant="7" id="NeX-2w-L5S"/>
                     <constraint firstAttribute="bottom" secondItem="WOG-z0-4Rl" secondAttribute="bottom" constant="7" id="rZb-EF-SEC"/>
                     <constraint firstItem="WOG-z0-4Rl" firstAttribute="top" secondItem="YsR-5h-J5j" secondAttribute="top" constant="7" id="s7k-6M-5fh"/>
                 </constraints>

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class OneTimeDealView: UIView {
     @IBOutlet weak var usedIndicator: UIImageView!
@@ -37,6 +38,8 @@ class OneTimeDealView: UIView {
         }
     }
     
+    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    
     func saveDealStatus() {
         if dealActiveSwitch.isOn {
             deal.used = false
@@ -44,7 +47,8 @@ class OneTimeDealView: UIView {
             deal.used = true
         }
         do {
-            try deal.managedObjectContext?.save()
+            try container?.viewContext.save()
+            deal.merchant?.id = deal.merchant?.id
         } catch {
             fatalError("Failure to save context: \(error)")
         }
