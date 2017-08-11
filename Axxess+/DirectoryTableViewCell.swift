@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 class DirectoryTableViewCell: UITableViewCell {
-
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var dealIndicatorView: UIView!
