@@ -21,9 +21,6 @@ class DirectoryTableViewController: UITableViewController, NSFetchedResultsContr
 
         let nib = UINib(nibName: "DirectoryTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "Merchant")
-
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 44
         
         // Create Fetch Request
         let fetchRequest: NSFetchRequest<Merchant> = Merchant.fetchRequest()
