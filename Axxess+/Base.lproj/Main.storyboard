@@ -106,6 +106,9 @@
                                                         <state key="normal" title="See Details">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="p1L-gy-vte" kind="show" identifier="detailSegue" id="NyC-Lm-ODH"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -150,7 +153,6 @@
                     <connections>
                         <outlet property="numberOfDealsActiveLabel" destination="m2e-CC-0mP" id="27S-Ce-MCl"/>
                         <outlet property="randomMerchantNameLabel" destination="GgI-5o-chJ" id="D1M-d9-73R"/>
-                        <outlet property="seeDetailsButton" destination="AfW-SZ-QfU" id="kcs-l2-ngh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -342,4 +344,7 @@
         <image name="merchants" width="20" height="22"/>
         <image name="randomizer" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NyC-Lm-ODH"/>
+    </inferredMetricsTieBreakers>
 </document>

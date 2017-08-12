@@ -11,12 +11,11 @@ import CoreData
 import MapKit
 
 class RandomizerViewController: UIViewController {
-    
     @IBOutlet weak var randomMerchantNameLabel: UILabel!
     @IBOutlet weak var numberOfDealsActiveLabel: UILabel!
-    @IBOutlet weak var seeDetailsButton: UIButton!
 
     private var merchants: [Merchant] = []
+    private var randomMerchant = Merchant()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,20 +32,19 @@ class RandomizerViewController: UIViewController {
         }
     }
 
-    @IBAction func tellMeWhatToEatPressed(_ sender: Any) {
-        // Find a random merchant with minimum 1 deal available.
-        var merchantsWithActiveDeal = [Merchant]()
-        for merchant in merchants {
-            if merchant.checkAvailableOneTimeDeals() > 0 {
-                merchantsWithActiveDeal.append(merchant)
-            }
+    // Segues to merchant details view if `See Details` is pressed.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue", let nextScene = segue.destination as? MerchantDetailViewController {
+            nextScene.currentMerchant = randomMerchant
         }
-        let randomIndex = random(merchantsWithActiveDeal.count - 1)
-        let randomMerchant = merchantsWithActiveDeal[randomIndex]
-        let randomMerchantDealsCount = randomMerchant.checkAvailableOneTimeDeals()
-       
+    }
+
+    @IBAction func tellMeWhatToEatPressed(_ sender: Any) {
         // Use random merchant's details to update view.
+        randomMerchant = findRandomMerchant()
+        let randomMerchantDealsCount = randomMerchant.checkAvailableOneTimeDeals()
         randomMerchantNameLabel.text = randomMerchant.value(forKey: "name") as? String
+
         if randomMerchantDealsCount == 1 {
             numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deal Active"
         } else {
@@ -57,5 +55,20 @@ class RandomizerViewController: UIViewController {
     //MARK: Helpers
     func random(_ n:Int) -> Int {
         return Int(arc4random_uniform(UInt32(n)))
+    }
+
+    func findRandomMerchant() -> Merchant {
+        // Find merchants with at least 1 deal available.
+        var merchantsWithActiveDeal = [Merchant]()
+        for merchant in merchants {
+            if merchant.checkAvailableOneTimeDeals() > 0 {
+                merchantsWithActiveDeal.append(merchant)
+            }
+        }
+
+        // Pick a random merchant from the array of merchants with deal(s).
+        let randomIndex = random(merchantsWithActiveDeal.count - 1)
+        randomMerchant = merchantsWithActiveDeal[randomIndex]
+        return randomMerchant
     }
 }
