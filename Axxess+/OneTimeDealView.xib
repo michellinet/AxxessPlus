@@ -16,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="426" height="148"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JTO-lk-bLW">
+                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JTO-lk-bLW">
                     <rect key="frame" x="10" y="0.0" width="386" height="148"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-Sd-fQt" userLabel="Indicator Stack View">
-                            <rect key="frame" x="0.0" y="46.5" width="30" height="55"/>
+                            <rect key="frame" x="0.0" y="45.5" width="30" height="57"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discount-grey" translatesAutoresizingMaskIntoConstraints="NO" id="nWc-iU-mME">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -31,17 +31,17 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKY-tv-8eW">
-                                    <rect key="frame" x="0.0" y="30" width="30" height="25"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                    <rect key="frame" x="0.0" y="30" width="30" height="27"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ul-Ab-mDO">
-                            <rect key="frame" x="38" y="29" width="303.5" height="90"/>
+                            <rect key="frame" x="42" y="25.5" width="295.5" height="97.5"/>
                             <string key="text">Buy a 16 in Val's Mega Combo Pizza, Get a Large Family Size Salad or Large Cheese Pizza Free. (Offers may not be combined. Not valid on Halloween , Super Bowl, or Valentine's Day.)</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
