@@ -10,7 +10,7 @@
     <entity name="OneTimeDeal" representedClassName=".OneTimeDeal" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="oneTimeDealDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="used" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="used" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="merchant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Merchant" inverseName="oneTimeDeals" inverseEntity="Merchant" syncable="YES"/>
     </entity>
     <elements>

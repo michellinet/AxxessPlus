@@ -21,6 +21,7 @@ public class OneTimeDeal: NSManagedObject {
         let oneTimeDeal = OneTimeDeal(context: context)
         oneTimeDeal.oneTimeDealDescription = oneTimeDealInfo.oneTimeDealDescription
         oneTimeDeal.id = oneTimeDealInfo.id
+        oneTimeDeal.used = false
 
         do {
             try context.save()

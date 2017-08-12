@@ -53,6 +53,10 @@ class DirectoryTableViewController: UITableViewController, NSFetchedResultsContr
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+
+        // Setup Search Bar
+        searchController.searchBar.scopeButtonTitles = ["All", "Active Deals", "Used Deals"]
+        searchController.searchBar.delegate = self
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,6 +116,10 @@ class DirectoryTableViewController: UITableViewController, NSFetchedResultsContr
                     cell.dealCount.text = "\(merchant.checkAvailableOneTimeDeals())"
                 }
             }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
         default:
             print("")
         }
@@ -119,7 +127,7 @@ class DirectoryTableViewController: UITableViewController, NSFetchedResultsContr
 
 }
 
-extension DirectoryTableViewController: UISearchResultsUpdating {
+extension DirectoryTableViewController: UISearchResultsUpdating, UISearchBarDelegate {
     //MARK: UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
@@ -127,13 +135,26 @@ extension DirectoryTableViewController: UISearchResultsUpdating {
 
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
-            if searchText != "" {
-                let filterPredicate = NSPredicate(format: "(name CONTAINS[c] %@) OR (%@ IN oneTimeDeals.id)", searchText, searchText)
-                fetchRequest.predicate = filterPredicate
+            let scopeIndex = searchController.searchBar.selectedScopeButtonIndex
+            let scopeTitle = searchController.searchBar.scopeButtonTitles![scopeIndex]
+
+            var applicablePredicates = [NSPredicate]()
+
+            if let scopePredicate = getPredicateFromScopedTitle(title: scopeTitle) {
+                applicablePredicates.append(scopePredicate)
             }
 
-            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.container!.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+            if searchText != "" {
+                let filterPredicate = NSPredicate(format: "(name CONTAINS[c] %@) OR (%@ IN oneTimeDeals.id) OR (%@ IN oneTimeDeals.oneTimeDealDescription)", searchText, searchText, searchText)
+                applicablePredicates.append(filterPredicate)
+            }
 
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: applicablePredicates)
+            fetchRequest.predicate = predicate
+
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.container!.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+            fetchedResultsController.delegate = self
+            
             do {
                 try fetchedResultsController.performFetch()
             } catch let error as NSError {
@@ -142,5 +163,55 @@ extension DirectoryTableViewController: UISearchResultsUpdating {
 
             tableView.reloadData()
         }
+    }
+
+    private func getPredicateFromScopedTitle(title: String) -> NSPredicate? {
+        switch title {
+        case "All":
+            return nil
+        case "Active Deals":
+            return NSPredicate(format: "%@ IN oneTimeDeals.used", NSNumber(value: false))
+        case "Used Deals":
+            return NSPredicate(format: "%@ IN oneTimeDeals.used", NSNumber(value: true))
+        default:
+            return nil
+        }
+    }
+
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        if let searchText = searchBar.text {
+            let fetchRequest: NSFetchRequest<Merchant> = Merchant.fetchRequest()
+
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+
+            let scopeIndex = searchBar.selectedScopeButtonIndex
+            let scopeTitle = searchBar.scopeButtonTitles![scopeIndex]
+
+            var applicablePredicates = [NSPredicate]()
+
+            if let scopePredicate = getPredicateFromScopedTitle(title: scopeTitle) {
+                applicablePredicates.append(scopePredicate)
+            }
+
+            if searchText != "" {
+                let filterPredicate = NSPredicate(format: "(name CONTAINS[c] %@) OR (%@ IN oneTimeDeals.id) OR (%@ IN oneTimeDeals.oneTimeDealDescription)", searchText, searchText, searchText)
+                applicablePredicates.append(filterPredicate)
+            }
+
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: applicablePredicates)
+            fetchRequest.predicate = predicate
+
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.container!.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+            fetchedResultsController.delegate = self
+
+            do {
+                try fetchedResultsController.performFetch()
+            } catch let error as NSError {
+                print("Couldn't fetch. \(error), \(error.localizedDescription)")
+            }
+            
+            tableView.reloadData()
+        }
+
     }
 }
