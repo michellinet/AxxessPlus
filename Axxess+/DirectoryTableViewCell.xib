@@ -16,35 +16,35 @@
             <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O83-IS-6Wi" id="YsR-5h-J5j">
-                <rect key="frame" x="0.0" y="0.0" width="310" height="47"/>
+                <rect key="frame" x="0.0" y="0.0" width="310" height="46.5"/>
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOG-z0-4Rl">
-                        <rect key="frame" x="7" y="6.5" width="296" height="33"/>
+                        <rect key="frame" x="5" y="5" width="300" height="36.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ika-Rn-O9f">
-                                <rect key="frame" x="0.0" y="0.0" width="263" height="33"/>
+                                <rect key="frame" x="0.0" y="0.0" width="263.5" height="36.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd0-1h-eZx">
-                                        <rect key="frame" x="0.0" y="0.0" width="37.5" height="18.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd0-1h-eZx">
+                                        <rect key="frame" x="0.0" y="0.0" width="37" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-ez-nHN">
-                                        <rect key="frame" x="0.0" y="18.5" width="31" height="14.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="254" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-ez-nHN">
+                                        <rect key="frame" x="0.0" y="23.5" width="24.5" height="13"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9j-Mc-gjF">
-                                <rect key="frame" x="263" y="0.0" width="33" height="33"/>
+                                <rect key="frame" x="263.5" y="0.0" width="36.5" height="36.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6b-cN-qZa">
-                                        <rect key="frame" x="12" y="7.5" width="9.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <rect key="frame" x="14.5" y="9.5" width="9.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -60,10 +60,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="WOG-z0-4Rl" secondAttribute="trailing" constant="7" id="IWC-zn-0Oc"/>
-                    <constraint firstItem="WOG-z0-4Rl" firstAttribute="leading" secondItem="YsR-5h-J5j" secondAttribute="leading" constant="7" id="NeX-2w-L5S"/>
-                    <constraint firstAttribute="bottom" secondItem="WOG-z0-4Rl" secondAttribute="bottom" constant="7" id="rZb-EF-SEC"/>
-                    <constraint firstItem="WOG-z0-4Rl" firstAttribute="top" secondItem="YsR-5h-J5j" secondAttribute="top" constant="7" id="s7k-6M-5fh"/>
+                    <constraint firstAttribute="trailing" secondItem="WOG-z0-4Rl" secondAttribute="trailing" constant="5" id="IWC-zn-0Oc"/>
+                    <constraint firstItem="WOG-z0-4Rl" firstAttribute="leading" secondItem="YsR-5h-J5j" secondAttribute="leading" constant="5" id="NeX-2w-L5S"/>
+                    <constraint firstAttribute="bottom" secondItem="WOG-z0-4Rl" secondAttribute="bottom" constant="5" id="rZb-EF-SEC"/>
+                    <constraint firstItem="WOG-z0-4Rl" firstAttribute="top" secondItem="YsR-5h-J5j" secondAttribute="top" constant="5" id="s7k-6M-5fh"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

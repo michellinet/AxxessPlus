@@ -38,7 +38,7 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ul-Ab-mDO">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ul-Ab-mDO">
                             <rect key="frame" x="42" y="25.5" width="295.5" height="97.5"/>
                             <string key="text">Buy a 16 in Val's Mega Combo Pizza, Get a Large Family Size Salad or Large Cheese Pizza Free. (Offers may not be combined. Not valid on Halloween , Super Bowl, or Valentine's Day.)</string>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
