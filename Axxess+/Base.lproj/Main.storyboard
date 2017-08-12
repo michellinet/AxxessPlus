@@ -82,26 +82,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-bI-CUK" userLabel="Container Stack View">
                                 <rect key="frame" x="46" y="94" width="283" height="494"/>
                                 <subviews>
-                                    <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zc5-my-zzc" userLabel="Random Merchant Details View">
+                                    <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zc5-my-zzc" userLabel="Random Merchant View">
                                         <rect key="frame" x="0.0" y="0.0" width="283" height="283"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="toH-il-URJ" userLabel="Random Merchant Details Stack View">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="toH-il-URJ" userLabel="Random Merchant Details Stack View">
                                                 <rect key="frame" x="30" y="30" width="223" height="223"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgI-5o-chJ">
-                                                        <rect key="frame" x="37" y="0.0" width="149.5" height="79"/>
+                                                        <rect key="frame" x="37" y="0.0" width="149.5" height="74.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deals Active" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2e-CC-0mP">
-                                                        <rect key="frame" x="69.5" y="79" width="84.5" height="59"/>
+                                                        <rect key="frame" x="69.5" y="74.5" width="84.5" height="74"/>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfW-SZ-QfU">
-                                                        <rect key="frame" x="0.0" y="138" width="223" height="85"/>
+                                                        <rect key="frame" x="0.0" y="148.5" width="223" height="74.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="12"/>
                                                         <state key="normal" title="See Details">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,6 +153,8 @@
                     <connections>
                         <outlet property="numberOfDealsActiveLabel" destination="m2e-CC-0mP" id="27S-Ce-MCl"/>
                         <outlet property="randomMerchantNameLabel" destination="GgI-5o-chJ" id="D1M-d9-73R"/>
+                        <outlet property="randomMerchantView" destination="Zc5-my-zzc" id="PJt-i6-iFh"/>
+                        <outlet property="seeDetailsButton" destination="AfW-SZ-QfU" id="LWz-DP-jeU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

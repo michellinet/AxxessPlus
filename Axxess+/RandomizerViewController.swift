@@ -11,9 +11,11 @@ import CoreData
 import MapKit
 
 class RandomizerViewController: UIViewController {
+    @IBOutlet weak var randomMerchantView: UIView!
     @IBOutlet weak var randomMerchantNameLabel: UILabel!
     @IBOutlet weak var numberOfDealsActiveLabel: UILabel!
-
+    @IBOutlet weak var seeDetailsButton: UIButton!
+    
     private var merchants: [Merchant] = []
     private var randomMerchant = Merchant()
 
@@ -40,16 +42,33 @@ class RandomizerViewController: UIViewController {
     }
 
     @IBAction func tellMeWhatToEatPressed(_ sender: Any) {
-        // Use random merchant's details to update view.
-        randomMerchant = findRandomMerchant()
-        let randomMerchantDealsCount = randomMerchant.checkAvailableOneTimeDeals()
-        randomMerchantNameLabel.text = randomMerchant.value(forKey: "name") as? String
+        // Set up animation with a clean card.
+        randomMerchantNameLabel.text = ""
+        numberOfDealsActiveLabel.text = ""
 
-        if randomMerchantDealsCount == 1 {
-            numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deal Active"
-        } else {
-            numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deals Active"
+        // Animate and complete with populating randomMerchant details.
+        UIView.animateKeyframes(withDuration: 0.3, delay: 0, options: .beginFromCurrentState, animations: {
+            self.randomMerchantView.layer.transform = CATransform3DRotate(CATransform3DIdentity, CGFloat(Double.pi), 0, 1, 0)
+            self.randomMerchantView.alpha = 0
+            self.seeDetailsButton.alpha = 0
+        }) { (_) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.randomMerchantView.layer.transform = CATransform3DIdentity
+                self.randomMerchantView.alpha = 1.0
+            }, completion: { (_) in
+                self.randomMerchant = self.findRandomMerchant()
+                let randomMerchantDealsCount = self.randomMerchant.checkAvailableOneTimeDeals()
+                self.randomMerchantNameLabel.text = self.randomMerchant.value(forKey: "name") as? String
+
+                if randomMerchantDealsCount == 1 {
+                    self.numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deal Active"
+                } else {
+                    self.numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deals Active"
+                }
+                self.seeDetailsButton.alpha = 1.0
+            })
         }
+
     }
     
     //MARK: Helpers
