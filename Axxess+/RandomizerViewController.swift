@@ -11,12 +11,13 @@ import CoreData
 import MapKit
 
 class RandomizerViewController: UIViewController {
-    
+    @IBOutlet weak var randomMerchantView: UIView!
     @IBOutlet weak var randomMerchantNameLabel: UILabel!
     @IBOutlet weak var numberOfDealsActiveLabel: UILabel!
     @IBOutlet weak var seeDetailsButton: UIButton!
-
+    
     private var merchants: [Merchant] = []
+    private var randomMerchant = Merchant()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,29 +34,60 @@ class RandomizerViewController: UIViewController {
         }
     }
 
+    // Segues to merchant details view if `See Details` is pressed.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue", let nextScene = segue.destination as? MerchantDetailViewController {
+            nextScene.currentMerchant = randomMerchant
+        }
+    }
+
     @IBAction func tellMeWhatToEatPressed(_ sender: Any) {
-        // Find a random merchant with minimum 1 deal available.
+        // Set up animation with a clean card.
+        randomMerchantNameLabel.text = ""
+        numberOfDealsActiveLabel.text = ""
+
+        // Animate and complete with populating randomMerchant details.
+        UIView.animateKeyframes(withDuration: 0.3, delay: 0, options: .beginFromCurrentState, animations: {
+            self.randomMerchantView.layer.transform = CATransform3DRotate(CATransform3DIdentity, CGFloat(Double.pi), 0, 1, 0)
+            self.randomMerchantView.alpha = 0
+            self.seeDetailsButton.alpha = 0
+        }) { (_) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.randomMerchantView.layer.transform = CATransform3DIdentity
+                self.randomMerchantView.alpha = 1.0
+            }, completion: { (_) in
+                self.randomMerchant = self.findRandomMerchant()
+                let randomMerchantDealsCount = self.randomMerchant.checkAvailableOneTimeDeals()
+                self.randomMerchantNameLabel.text = self.randomMerchant.value(forKey: "name") as? String
+
+                if randomMerchantDealsCount == 1 {
+                    self.numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deal Active"
+                } else {
+                    self.numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deals Active"
+                }
+                self.seeDetailsButton.alpha = 1.0
+            })
+        }
+
+    }
+    
+    //MARK: Helpers
+    func random(_ n:Int) -> Int {
+        return Int(arc4random_uniform(UInt32(n)))
+    }
+
+    func findRandomMerchant() -> Merchant {
+        // Find merchants with at least 1 deal available.
         var merchantsWithActiveDeal = [Merchant]()
         for merchant in merchants {
             if merchant.checkAvailableOneTimeDeals() > 0 {
                 merchantsWithActiveDeal.append(merchant)
             }
         }
+
+        // Pick a random merchant from the array of merchants with deal(s).
         let randomIndex = random(merchantsWithActiveDeal.count - 1)
-        let randomMerchant = merchantsWithActiveDeal[randomIndex]
-        let randomMerchantDealsCount = randomMerchant.checkAvailableOneTimeDeals()
-       
-        // Use random merchant's details to update view.
-        randomMerchantNameLabel.text = randomMerchant.value(forKey: "name") as? String
-        if randomMerchantDealsCount == 1 {
-            numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deal Active"
-        } else {
-            numberOfDealsActiveLabel.text = "\(randomMerchantDealsCount) Deals Active"
-        }
-    }
-    
-    //MARK: Helpers
-    func random(_ n:Int) -> Int {
-        return Int(arc4random_uniform(UInt32(n)))
+        randomMerchant = merchantsWithActiveDeal[randomIndex]
+        return randomMerchant
     }
 }
