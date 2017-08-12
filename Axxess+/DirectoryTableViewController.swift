@@ -128,7 +128,7 @@ extension DirectoryTableViewController: UISearchResultsUpdating {
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
             if searchText != "" {
-                let filterPredicate = NSPredicate(format: "name CONTAINS[c] %@", searchText)
+                let filterPredicate = NSPredicate(format: "(name CONTAINS[c] %@) OR (%@ IN oneTimeDeals.id)", searchText, searchText)
                 fetchRequest.predicate = filterPredicate
             }
 
