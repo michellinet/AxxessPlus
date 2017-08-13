@@ -12,15 +12,13 @@ import CoreData
 
 class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var merchantName: UILabel!
-    @IBOutlet weak var merchantAddress: UILabel!
+    @IBOutlet weak var merchantAddressTextView: UITextView!
     @IBOutlet weak var merchantContinualDeal: UILabel!
     @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var oneTimeDealsStackView: UIStackView!
 
-    
 // MARK: UIBarButtonItems
-    
     private func updateBarButtonsForMode(editModeOn: Bool) {
         if editModeOn == true {
             for view in oneTimeDealsStackView.arrangedSubviews {
@@ -108,7 +106,7 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     func configureView() {
         if let merchant = currentMerchant {
             merchantName.text = merchant.name
-            merchantAddress.text = merchant.address
+            merchantAddressTextView.text = merchant.address
             merchantContinualDeal.text = merchant.continualDeal
 
             if let oneTimeDeals = merchant.oneTimeDeals as? Set<OneTimeDeal> {
@@ -118,8 +116,7 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
                     oneTimeDealsStackView.addArrangedSubview(view)
                 }
             }
-            
-            if let address = merchantAddress.text {
+            if let address = merchant.address {
                 setupMKView(address: address, MKView: merchantMapView)
             }
         }
