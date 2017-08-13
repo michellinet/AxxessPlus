@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupAxxessMerchants()
         UISearchBar.appearance().tintColor = UIColor(colorLiteralRed: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0)
+        _ = YelpRequestManager().getAuthToken()
         return true
     }
 
