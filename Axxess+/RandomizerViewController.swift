@@ -66,7 +66,6 @@ class RandomizerViewController: UIViewController {
                 self.seeDetailsButton.alpha = 1.0
             })
         }
-
     }
     
     //MARK: Helpers
