@@ -17,6 +17,7 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var oneTimeDealsStackView: UIStackView!
+    @IBOutlet weak var oneTimeDealsHeader: UILabel!
     @IBOutlet weak var yelpInfoSpinner: UIActivityIndicatorView!
 
     //MARK: Yelp Info
@@ -79,7 +80,6 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
                     })
                 }
             }
-
             leftBarButtonItem.title = "Cancel"
             leftBarButtonItem.style = .done
             leftBarButtonItem.action =  #selector(cancelButtonTapped(sender:))
@@ -94,7 +94,6 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
                     })
                 }
             }
-
             leftBarButtonItem.title = "Done"
             leftBarButtonItem.style = .done
             leftBarButtonItem.action = #selector(doneButtonTapped(sender:))
@@ -117,11 +116,17 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
         var alert = UIAlertController()
         for view in oneTimeDealsStackView.arrangedSubviews {
             if let oneTimeDealView = view as? OneTimeDealView {
+                /// TODO: Enable button only when changes are made.
                 oneTimeDealView.saveDealStatus()
+
+                /// TODO: Handle alert for merchants with more than one deal (Magic number 2 = oneTimeDealHeader + oneTimeDealView). For now, leaving a generic message.
                 if oneTimeDealView.dealActiveSwitch.isOn {
                     alert = UIAlertController(title: "Whoop!", message: "Your deal is re-activated!", preferredStyle: .alert)
                 } else {
                     alert = UIAlertController(title: "Cash Out!", message: "You've used your one time deal!", preferredStyle: .alert)
+                }
+                if oneTimeDealsStackView.arrangedSubviews.count > 2 {
+                    alert = UIAlertController(title: "Cha Ching!", message: "Your deals have been saved!", preferredStyle: .alert)
                 }
             }
         }
@@ -159,12 +164,16 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
             merchantContinualDeal.text = merchant.continualDeal
 
             if let oneTimeDeals = merchant.oneTimeDeals as? Set<OneTimeDeal> {
+                if oneTimeDeals.count == 0 {
+                    oneTimeDealsHeader.isHidden = true
+                }
                 for deal in oneTimeDeals {
                     let view = OneTimeDealView.createOneTimeDealView(deal: deal)
                     view.translatesAutoresizingMaskIntoConstraints = false
                     oneTimeDealsStackView.addArrangedSubview(view)
                 }
             }
+
             if let address = merchant.address {
                 setupMKView(address: address, MKView: merchantMapView)
             }

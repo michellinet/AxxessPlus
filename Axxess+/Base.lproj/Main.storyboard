@@ -282,6 +282,7 @@
                         <outlet property="merchantContinualDeal" destination="nQn-lR-QXE" id="Wa1-g9-Led"/>
                         <outlet property="merchantMapView" destination="tWl-UQ-Cf0" id="hZC-6B-Z7c"/>
                         <outlet property="merchantName" destination="7dK-T8-Qow" id="gz6-Ji-ZLE"/>
+                        <outlet property="oneTimeDealsHeader" destination="nob-et-naS" id="aDj-3c-1qR"/>
                         <outlet property="oneTimeDealsStackView" destination="cZi-U1-WWA" id="jKN-ea-3SO"/>
                         <outlet property="rightBarButtonItem" destination="2NT-nF-MhM" id="o4z-wY-Gr7"/>
                         <outlet property="yelpInfoSpinner" destination="b6y-Lx-HaO" id="Vuu-OD-Vic"/>
@@ -295,7 +296,7 @@
         <scene sceneID="47k-mh-NiB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HMu-Gl-Ldh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Directory" image="merchants" id="rkG-BR-hOl">
+                    <tabBarItem key="tabBarItem" title="Directory" image="merchants_grey" selectedImage="merchants" id="rkG-BR-hOl">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.30196078431372547" green="0.082352941176470587" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
@@ -320,7 +321,7 @@
         <scene sceneID="BLb-V3-eNm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Fr-9A-r6D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Randomizer" image="randomizer" id="upI-Xf-JPe">
+                    <tabBarItem key="tabBarItem" title="Randomizer" image="randomizer_grey" selectedImage="randomizer" id="upI-Xf-JPe">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.30196078431372547" green="0.082352941176470587" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
@@ -344,7 +345,9 @@
     </scenes>
     <resources>
         <image name="merchants" width="20" height="22"/>
+        <image name="merchants_grey" width="20" height="22"/>
         <image name="randomizer" width="24" height="24"/>
+        <image name="randomizer_grey" width="24" height="24"/>
         <image name="yelp_logo" width="61" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
