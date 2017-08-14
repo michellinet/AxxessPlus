@@ -282,6 +282,7 @@
                         <outlet property="merchantContinualDeal" destination="nQn-lR-QXE" id="Wa1-g9-Led"/>
                         <outlet property="merchantMapView" destination="tWl-UQ-Cf0" id="hZC-6B-Z7c"/>
                         <outlet property="merchantName" destination="7dK-T8-Qow" id="gz6-Ji-ZLE"/>
+                        <outlet property="oneTimeDealsHeader" destination="nob-et-naS" id="aDj-3c-1qR"/>
                         <outlet property="oneTimeDealsStackView" destination="cZi-U1-WWA" id="jKN-ea-3SO"/>
                         <outlet property="rightBarButtonItem" destination="2NT-nF-MhM" id="o4z-wY-Gr7"/>
                         <outlet property="yelpInfoSpinner" destination="b6y-Lx-HaO" id="Vuu-OD-Vic"/>

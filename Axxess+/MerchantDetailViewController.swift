@@ -17,6 +17,7 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var oneTimeDealsStackView: UIStackView!
+    @IBOutlet weak var oneTimeDealsHeader: UILabel!
     @IBOutlet weak var yelpInfoSpinner: UIActivityIndicatorView!
 
     //MARK: Yelp Info
@@ -159,12 +160,16 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
             merchantContinualDeal.text = merchant.continualDeal
 
             if let oneTimeDeals = merchant.oneTimeDeals as? Set<OneTimeDeal> {
+                if oneTimeDeals.count == 0 {
+                    oneTimeDealsHeader.isHidden = true
+                }
                 for deal in oneTimeDeals {
                     let view = OneTimeDealView.createOneTimeDealView(deal: deal)
                     view.translatesAutoresizingMaskIntoConstraints = false
                     oneTimeDealsStackView.addArrangedSubview(view)
                 }
             }
+
             if let address = merchant.address {
                 setupMKView(address: address, MKView: merchantMapView)
             }
