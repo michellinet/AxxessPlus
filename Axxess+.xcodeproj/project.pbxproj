@@ -30,6 +30,7 @@
 		DF71885A1EDFB70E0016B5EB /* Axxess_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188591EDFB70E0016B5EB /* Axxess_Tests.swift */; };
 		DF7188651EDFB70E0016B5EB /* Axxess_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188641EDFB70E0016B5EB /* Axxess_UITests.swift */; };
 		DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */; };
+		DF73DBEA1F411F8000E9C139 /* YelpDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73DBE91F411F8000E9C139 /* YelpDataParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		DF7188641EDFB70E0016B5EB /* Axxess_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axxess_UITests.swift; sourceTree = "<group>"; };
 		DF7188661EDFB70E0016B5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxxessMerchant.swift; sourceTree = "<group>"; };
+		DF73DBE91F411F8000E9C139 /* YelpDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpDataParser.swift; sourceTree = "<group>"; };
 		E369247263A029AA34392F18 /* Pods-Axxess+UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Axxess+UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Axxess+UITests/Pods-Axxess+UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 				01E07D511F29369C00E9779F /* OneTimeDealView.swift */,
 				DF7188481EDFB70E0016B5EB /* Main.storyboard */,
 				DF23F1DE1F40CA0400855DF5 /* YelpRequestManager.swift */,
+				DF73DBE91F411F8000E9C139 /* YelpDataParser.swift */,
 				01E4AE501F20487E0081E23E /* Core Data */,
 				DF5ECA4D1F1AD0FC00CAEEBF /* Supporting Files */,
 			);
@@ -522,6 +525,7 @@
 				01E4AEA51F215A4B0081E23E /* Merchant+CoreDataClass.swift in Sources */,
 				01E07D521F29369C00E9779F /* OneTimeDealView.swift in Sources */,
 				DF23F1DF1F40CA0400855DF5 /* YelpRequestManager.swift in Sources */,
+				DF73DBEA1F411F8000E9C139 /* YelpDataParser.swift in Sources */,
 				01E4AEA61F215A4B0081E23E /* Merchant+CoreDataProperties.swift in Sources */,
 				DF5ECA501F1AD42000CAEEBF /* MyAxxess.xcdatamodeld in Sources */,
 				01E4AEA41F215A4B0081E23E /* OneTimeDeal+CoreDataProperties.swift in Sources */,
