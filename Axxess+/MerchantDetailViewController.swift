@@ -17,6 +17,57 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var oneTimeDealsStackView: UIStackView!
+    @IBOutlet weak var yelpInfoSpinner: UIActivityIndicatorView!
+
+    //MARK: Yelp Info
+    @IBAction func yelpInfoButtonPressed(_ sender: UIButton) {
+        /// Reset spinner & button
+        sender.isHidden = true
+        yelpInfoSpinner.isHidden = false
+        yelpInfoSpinner.startAnimating()
+
+        /// Request Yelp Info
+        let manager = YelpRequestManager()
+        if let merchant = currentMerchant {
+            manager.fetchMerchantYelpInfo(merchant: merchant) { (info) in
+
+                /// Offline or failed to grab info
+                guard let info = info else {
+                    let alert = UIAlertController(title: "Uh oh!", message: "You're offline! \nPlease go online to view Yelp Info.", preferredStyle: .alert)
+                    let dismiss = UIAlertAction(title: "Bummer!", style: .cancel, handler: nil)
+                    dismiss.setValue(UIColor(colorLiteralRed: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
+                    alert.addAction(dismiss)
+                    self.present(alert, animated: true, completion: {
+                        self.yelpInfoSpinner.isHidden = true
+                        self.yelpInfoSpinner.stopAnimating()
+                        sender.isHidden = false
+                    })
+                    return
+                }
+
+                /// Present info in alert & link to Yelp
+                let merchantYelpInfo = parse(yelpData: info)
+
+                let alert = UIAlertController(title: "Yelp Info", message: "\n\(merchantYelpInfo.businessRating) stars\n based on \(merchantYelpInfo.businessReviewCount) reviews", preferredStyle: .alert)
+                let dismiss = UIAlertAction(title: "Yay!", style: .cancel, handler: nil)
+                dismiss.setValue(UIColor(colorLiteralRed: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
+                let urlAction = UIAlertAction(title: "View on Yelp", style: .default, handler: { _ in
+                    if let url = URL(string: merchantYelpInfo.businessURL) {
+                        UIApplication.shared.open(url)
+                    }
+                })
+                urlAction.setValue(UIColor(colorLiteralRed: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
+                alert.addAction(dismiss)
+                alert.addAction(urlAction)
+
+                self.present(alert, animated: true, completion: {
+                    self.yelpInfoSpinner.isHidden = true
+                    self.yelpInfoSpinner.stopAnimating()
+                    sender.isHidden = false
+                })
+            }
+        }
+    }
 
 // MARK: UIBarButtonItems
     private func updateBarButtonsForMode(editModeOn: Bool) {
@@ -32,7 +83,6 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
             leftBarButtonItem.title = "Cancel"
             leftBarButtonItem.style = .done
             leftBarButtonItem.action =  #selector(cancelButtonTapped(sender:))
-
             rightBarButtonItem.title = "Save"
             rightBarButtonItem.style = .plain
             rightBarButtonItem.action = #selector(saveButtonTapped(sender:))
@@ -48,7 +98,6 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
             leftBarButtonItem.title = "Done"
             leftBarButtonItem.style = .done
             leftBarButtonItem.action = #selector(doneButtonTapped(sender:))
-
             rightBarButtonItem.title = "Edit"
             rightBarButtonItem.style = .plain
             rightBarButtonItem.action = #selector(editButtonPressed(_:))
@@ -102,7 +151,7 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
     }
     
     var currentMerchant: Merchant?
-    
+
     func configureView() {
         if let merchant = currentMerchant {
             merchantName.text = merchant.name

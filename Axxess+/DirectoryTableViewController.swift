@@ -82,13 +82,7 @@ class DirectoryTableViewController: UITableViewController, NSFetchedResultsContr
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let manager = YelpRequestManager()
-        let merchant = fetchedResultsController.object(at: indexPath)
-        manager.fetchMerchantYelpInfo(merchant: merchant) { (info) in
-            print(info)
-        }
         performSegue(withIdentifier: "detailSegue", sender: nil)
-
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

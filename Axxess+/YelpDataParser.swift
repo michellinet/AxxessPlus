@@ -15,9 +15,10 @@ struct YelpInfo {
 }
 
 func parse(yelpData: [String: Any]) -> YelpInfo {
-    let merchantYelpURL = yelpData["url"] as! String
-    let merchantYelpRating = yelpData["rating"] as! Double
-    let merchantYelpReviewCount = yelpData["review_count"] as! Int
+    let merchant = (yelpData["businesses"] as! [[String: Any]]).first!
+    let merchantYelpURL = merchant["url"] as! String
+    let merchantYelpRating = merchant["rating"] as! Double
+    let merchantYelpReviewCount = merchant["review_count"] as! Int
 
     return YelpInfo(businessURL: merchantYelpURL, businessRating: merchantYelpRating, businessReviewCount: merchantYelpReviewCount)
 }
