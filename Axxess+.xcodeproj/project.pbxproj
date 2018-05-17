@@ -31,6 +31,7 @@
 		DF7188651EDFB70E0016B5EB /* Axxess_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188641EDFB70E0016B5EB /* Axxess_UITests.swift */; };
 		DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */; };
 		DF73DBEA1F411F8000E9C139 /* YelpDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73DBE91F411F8000E9C139 /* YelpDataParser.swift */; };
+		DFAF2A9520ACF1CC00B1F12C /* VenturaMerchants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF2A9420ACF1CC00B1F12C /* VenturaMerchants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		DF7188661EDFB70E0016B5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF7188721EDFB7590016B5EB /* AxxessMerchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxxessMerchant.swift; sourceTree = "<group>"; };
 		DF73DBE91F411F8000E9C139 /* YelpDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpDataParser.swift; sourceTree = "<group>"; };
+		DFAF2A9420ACF1CC00B1F12C /* VenturaMerchants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenturaMerchants.swift; sourceTree = "<group>"; };
 		E369247263A029AA34392F18 /* Pods-Axxess+UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Axxess+UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Axxess+UITests/Pods-Axxess+UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 				DF71884D1EDFB70E0016B5EB /* LaunchScreen.storyboard */,
 				DF7188501EDFB70E0016B5EB /* Info.plist */,
 				DF7188441EDFB70E0016B5EB /* AppDelegate.swift */,
+				DFAF2A9420ACF1CC00B1F12C /* VenturaMerchants.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				DF5ECA4C1F1AD08900CAEEBF /* DirectoryTableViewController.swift in Sources */,
 				01E4AE4F1F20485E0081E23E /* MerchantDetailViewController.swift in Sources */,
 				DF7188731EDFB7590016B5EB /* AxxessMerchant.swift in Sources */,
+				DFAF2A9520ACF1CC00B1F12C /* VenturaMerchants.swift in Sources */,
 				01E4AEA31F215A4B0081E23E /* OneTimeDeal+CoreDataClass.swift in Sources */,
 				DF7188451EDFB70E0016B5EB /* AppDelegate.swift in Sources */,
 				01E4AE4B1F200F1E0081E23E /* DirectoryTableViewCell.swift in Sources */,
