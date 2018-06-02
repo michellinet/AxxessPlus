@@ -36,7 +36,7 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
                 guard let info = info else {
                     let alert = UIAlertController(title: "Uh oh!", message: "You're offline! \nPlease go online to view Yelp Info.", preferredStyle: .alert)
                     let dismiss = UIAlertAction(title: "Bummer!", style: .cancel, handler: nil)
-                    dismiss.setValue(UIColor(colorLiteralRed: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
+                    dismiss.setValue(UIColor(red: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
                     alert.addAction(dismiss)
                     self.present(alert, animated: true, completion: {
                         self.yelpInfoSpinner.isHidden = true
@@ -51,13 +51,13 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
 
                 let alert = UIAlertController(title: "Yelp Info", message: "\n\(merchantYelpInfo.businessRating) stars\n based on \(merchantYelpInfo.businessReviewCount) reviews", preferredStyle: .alert)
                 let dismiss = UIAlertAction(title: "Yay!", style: .cancel, handler: nil)
-                dismiss.setValue(UIColor(colorLiteralRed: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
+                dismiss.setValue(UIColor(red: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
                 let urlAction = UIAlertAction(title: "View on Yelp", style: .default, handler: { _ in
                     if let url = URL(string: merchantYelpInfo.businessURL) {
                         UIApplication.shared.open(url)
                     }
                 })
-                urlAction.setValue(UIColor(colorLiteralRed: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
+                urlAction.setValue(UIColor(red: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
                 alert.addAction(dismiss)
                 alert.addAction(urlAction)
 
@@ -132,7 +132,7 @@ class MerchantDetailViewController: UIViewController, MKMapViewDelegate {
         }
 
         let dismiss = UIAlertAction(title: "Sweet!", style: .default, handler: nil)
-        dismiss.setValue(UIColor(colorLiteralRed: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
+        dismiss.setValue(UIColor(red: 77/255.0, green: 21/255.0, blue: 186/255.0, alpha: 1.0), forKey: "titleTextColor")
         alert.addAction(dismiss)
         self.present(alert, animated: true, completion: nil)
         updateBarButtonsForMode(editModeOn: false)
